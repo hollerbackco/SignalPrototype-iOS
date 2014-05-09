@@ -51,10 +51,10 @@
                     <constraints>
                         <constraint firstItem="tPc-kS-TtN" firstAttribute="centerY" secondItem="hwU-dD-NFY" secondAttribute="centerY" id="3Nr-RO-5bO"/>
                         <constraint firstAttribute="centerX" secondItem="tPc-kS-TtN" secondAttribute="centerX" id="3wb-RZ-aDE"/>
+                        <constraint firstAttribute="trailing" secondItem="tPc-kS-TtN" secondAttribute="trailing" id="JJQ-aH-DXu"/>
                         <constraint firstAttribute="bottom" secondItem="t6K-iP-Jaa" secondAttribute="bottom" id="OEM-mU-Wiq"/>
                         <constraint firstItem="t6K-iP-Jaa" firstAttribute="leading" secondItem="hwU-dD-NFY" secondAttribute="leading" id="Y9d-si-pIy"/>
-                        <constraint firstItem="tPc-kS-TtN" firstAttribute="leading" secondItem="hwU-dD-NFY" secondAttribute="leading" id="a4F-ea-CbX"/>
-                        <constraint firstAttribute="trailing" secondItem="tPc-kS-TtN" secondAttribute="trailing" id="pYA-fe-vhl"/>
+                        <constraint firstItem="tPc-kS-TtN" firstAttribute="leading" secondItem="hwU-dD-NFY" secondAttribute="leading" id="eZa-7c-s7w"/>
                     </constraints>
                 </view>
             </subviews>

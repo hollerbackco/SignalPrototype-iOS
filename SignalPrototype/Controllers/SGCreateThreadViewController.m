@@ -8,6 +8,7 @@
 
 #import "SGCreateThreadViewController.h"
 #import "SGConversationsViewController.h"
+#import "JNIcon.h"
 
 @interface SGCreateThreadViewController ()
 
@@ -24,12 +25,38 @@
 - (void)viewDidLoad
 {
     self.title = JNLocalizedString(@"Signal");
+    
     [super viewDidLoad];
+    
+    [self setupViews];
 }
 
 - (void)setupNavigationBar
 {
-    [self applyGearNavigationButtonWithTarget:self action:@selector(listAction:)];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    [self applyInboxNavigationButtonWithTarget:self action:@selector(listAction:)];
+}
+
+- (void)setupViews
+{
+    self.messageTextField.backgroundColor = JNClearColor;
+    self.messageTextField.placeholder = JNLocalizedString(@"Type something");
+    self.messageTextField.font = [UIFont primaryFontWithSize:20.0];
+    self.messageTextField.textColor = JNGrayColor;
+    self.messageTextField.textAlignment = NSTextAlignmentCenter;
+    
+    self.cameraButton.backgroundColor = JNClearColor;
+    [self.cameraButton setImage:[JNIcon cameraImageIconWithSize:30.0 color:JNGrayColor] forState:UIControlStateNormal];
+    self.cameraButton.imageView.contentMode = UIViewContentModeCenter;
+    [self.cameraButton addTarget:self action:@selector(cameraAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.messageTextField becomeFirstResponder];
 }
 
 #pragma mark - Actions
@@ -40,6 +67,11 @@
         self.conversationsViewController = [[SGConversationsViewController alloc] initWithNib];
     }
     [self.navigationController pushViewController:self.conversationsViewController animated:YES];
+}
+
+- (void)cameraAction:(id)sender
+{
+    
 }
 
 @end
