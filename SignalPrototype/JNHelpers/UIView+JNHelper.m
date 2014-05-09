@@ -281,6 +281,21 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
 
 @implementation UITextField (JNHelper)
 
+- (void)awakeFromNib
+{
+    [self applyPadding];
+}
+
+- (void)applyPadding
+{
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    self.leftView = paddingView;
+    self.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.rightView = paddingView;
+    self.rightViewMode = UITextFieldViewModeAlways;
+}
+
 - (void)addToolBarItem:(NSString*)title target:(id)target action:(SEL)action
 {
     NSMutableArray *items = [@[] mutableCopy];

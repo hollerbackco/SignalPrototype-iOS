@@ -113,11 +113,11 @@
     self.sectionLabel.textColor = JNBlackTextColor;
     
     self.emailTextField.tag = 1003;
+    self.emailTextField.backgroundColor = JNWhiteColor;
 	self.emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
 	self.emailTextField.returnKeyType = UIReturnKeyDone;
     self.emailTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 	self.emailTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-//	self.emailTextField.textInputInset = UIEdgeInsetsMake(0.0, 50.0, 0.0, 0.0);
 	self.emailTextField.placeholder = @"Email";
     
 	UIImageView *envelope = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hb-email-icon.png"]];
@@ -125,12 +125,12 @@
 	[self.emailTextField addSubview:envelope];
 	
 	self.passwordTextField.tag = 1002;
+    self.passwordTextField.backgroundColor = JNWhiteColor;
 	self.passwordTextField.keyboardType = UIKeyboardTypeAlphabet;
 	self.passwordTextField.returnKeyType = UIReturnKeyDone;
     self.passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 	self.passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	self.passwordTextField.secureTextEntry = YES;
-//	self.passwordTextField.textInputInset = UIEdgeInsetsMake(0.0, 50.0, 0.0, 0.0);
 	self.passwordTextField.placeholder = @"Password";
     
 	UIImageView *lock = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hb-lock-icon.png"]];
@@ -174,7 +174,9 @@
                         RACObserve(self.passwordTextField, text)];
     RAC(self, hasValidTextFields) = [RACSignal combineLatest:latest
                                                      reduce:^(NSString *email, NSString *password) {
-                                                         return @([NSString isNotEmptyString:email] && [NSString isNotEmptyString:password]);
+                                                         return @(
+                                                         [NSString isNotEmptyString:self.emailTextField.text] &&
+                                                         [NSString isNotEmptyString:self.passwordTextField.text]);
                                                      }];
 }
 
