@@ -8,3 +8,5 @@
 /build.log
 /Podfile.lock
 *.orig
+
+/SignalPrototype.xcworkspace/
