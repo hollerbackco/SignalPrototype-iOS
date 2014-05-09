@@ -28,6 +28,7 @@
 		0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B1191C7B6E00510F35 /* UIImage+JNHelper.m */; };
 		0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */; };
 		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
+		0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C5191C7BB500510F35 /* JNLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JNHelper.m"; sourceTree = "<group>"; };
 		0D66D6B4191C7B6E00510F35 /* UIViewController+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JNHelper.h"; sourceTree = "<group>"; };
 		0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6C4191C7BB500510F35 /* JNLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNLogger.h; sourceTree = "<group>"; };
+		0D66D6C5191C7BB500510F35 /* JNLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 				0D66D683191C7A6100510F35 /* SGAppDelegate.h */,
 				0D66D684191C7A6100510F35 /* SGAppDelegate.m */,
 				0D66D6A3191C7B6E00510F35 /* JNHelpers */,
+				0D66D6C3191C7BB500510F35 /* JNLogger */,
 				0D66D686191C7A6100510F35 /* Images.xcassets */,
 				0D66D67B191C7A6100510F35 /* Supporting Files */,
 			);
@@ -195,6 +199,15 @@
 				0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */,
 			);
 			path = JNHelpers;
+			sourceTree = "<group>";
+		};
+		0D66D6C3191C7BB500510F35 /* JNLogger */ = {
+			isa = PBXGroup;
+			children = (
+				0D66D6C4191C7BB500510F35 /* JNLogger.h */,
+				0D66D6C5191C7BB500510F35 /* JNLogger.m */,
+			);
+			path = JNLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +315,7 @@
 				0D66D6BD191C7B6E00510F35 /* UIColor+JNHelper.m in Sources */,
 				0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */,
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
+				0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */,
 				0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */,
 				0D66D6B9191C7B6E00510F35 /* JNAlertView.m in Sources */,
 			);
