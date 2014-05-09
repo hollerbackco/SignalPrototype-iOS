@@ -1,0 +1,10 @@
+/HollerbackApp.xcworkspace/
+/HollerbackApp.xcodeproj/xcuserdata/
+/HollerbackApp.xcodeproj/project.xcworkspace/
+/Pods/
+/.ds_store
+/.DS_Store
+.DS_Store
+/build.log
+/Podfile.lock
+*.orig
