@@ -273,12 +273,6 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
 
 #pragma mark - UITextField (JNHelper)
 
-@interface UITextField ()
-
-@property (nonatomic, strong) UIToolbar *toolbar;
-
-@end
-
 @implementation UITextField (JNHelper)
 
 - (void)awakeFromNib
@@ -297,9 +291,17 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
 }
 
 - (void)addToolBarItem:(NSString*)title target:(id)target action:(SEL)action
-{
+{   
+    if (!jn_toolbar) {
+        jn_toolbar = [[UIToolbar alloc] init];
+        [jn_toolbar setBarStyle:UIBarStyleDefault];
+        [jn_toolbar sizeToFit];
+    } else {
+        jn_toolbar.items = nil;
+    }
+    
     NSMutableArray *items = [@[] mutableCopy];
-    if ([NSArray isEmptyArray:self.toolbar.items]) {
+    if ([NSArray isEmptyArray:jn_toolbar.items]) {
         // Flex
         UIBarButtonItem *flexButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
         [items addObject:flexButton];
@@ -307,20 +309,22 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
         UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleBordered target:target action:action];
         [items addObject:button];
         
-        self.toolbar.items = items;
+        jn_toolbar.items = items;
     }
 }
+
+static UIToolbar *jn_toolbar;
 
 - (void)addToolbarWithDoneTarget:(id)doneTarget doneAction:(SEL)doneAction
 prevTarget:(id)prevTarget prevAction:(SEL)prevAction
 nextTarget:(id)nextTarget nextAction:(SEL)nextAction
 {
-    if (!self.toolbar) {
-        self.toolbar = [[UIToolbar alloc] init];
-        [self.toolbar setBarStyle:UIBarStyleDefault];
-        [self.toolbar sizeToFit];
+    if (!jn_toolbar) {
+        jn_toolbar = [[UIToolbar alloc] init];
+        [jn_toolbar setBarStyle:UIBarStyleDefault];
+        [jn_toolbar sizeToFit];
     } else {
-        self.toolbar.items = nil;
+        jn_toolbar.items = nil;
     }
     
     NSMutableArray *items = [@[] mutableCopy];
@@ -345,13 +349,13 @@ nextTarget:(id)nextTarget nextAction:(SEL)nextAction
         [items addObject:doneButton];
     }
     
-    self.toolbar.items = items;
-    self.inputAccessoryView = self.toolbar;
+    jn_toolbar.items = items;
+    self.inputAccessoryView = jn_toolbar;
 }
 
 - (void)removeToolBarItems
 {
-    [self.toolbar setItems:@[] animated:YES];
+    [jn_toolbar setItems:@[] animated:YES];
 }
 
 @end

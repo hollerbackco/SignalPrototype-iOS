@@ -21,7 +21,6 @@
 @interface HBRegisterViewController () <UITextFieldDelegate, HBCountryPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *textFieldCollection;
-@property (strong, nonatomic) IBOutletCollection(id) NSArray *registrationCollection;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttonCollection;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labelCollection;
 
@@ -205,9 +204,10 @@
                         RACObserve(self.phoneTextField, text)];
     RAC(self, hasValidTextFields) = [RACSignal combineLatest:latest
                                                      reduce:^(NSString *username, NSString *countryCode, NSString *phone) {
-                                                         return @([NSString isNotEmptyString:username]	&&
-                                                         [NSString isNotEmptyString:countryCode] &&
-                                                         [NSString isNotEmptyString:phone]		);
+                                                         return @(
+                                                         [NSString isNotEmptyString:self.usernameTextField.text]	&&
+                                                         [NSString isNotEmptyString:self.countryCodeTextField.text] &&
+                                                         [NSString isNotEmptyString:self.phoneTextField.text]);
                                                      }];
 }
 
@@ -336,7 +336,7 @@ static BOOL _keyboardDidShow;
     }
     if ([textField isEqual:self.countryCodeTextField] || [textField isEqual:self.phoneTextField]) {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [textField addToolbarWithDoneTarget:textField doneAction:@selector(textFieldShouldReturn:)
+        [textField addToolbarWithDoneTarget:self doneAction:@selector(textFieldShouldReturn:)
                                  prevTarget:nil prevAction:nil
                                  nextTarget:nil nextAction:nil];
     }

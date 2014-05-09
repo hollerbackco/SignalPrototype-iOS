@@ -48,6 +48,7 @@
     
     self.cameraButton.backgroundColor = JNClearColor;
     [self.cameraButton setImage:[JNIcon cameraImageIconWithSize:30.0 color:JNGrayColor] forState:UIControlStateNormal];
+    self.cameraButton.tintColor = JNGrayColor;
     self.cameraButton.imageView.contentMode = UIViewContentModeCenter;
     [self.cameraButton addTarget:self action:@selector(cameraAction:) forControlEvents:UIControlEventTouchUpInside];
 }

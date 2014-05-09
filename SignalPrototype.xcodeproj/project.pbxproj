@@ -97,6 +97,7 @@
 		0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */; };
 		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
 		0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C5191C7BB500510F35 /* JNLogger.m */; };
+		0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC855AB191D9A2200396425 /* HBBaseWelcomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JNHelper.m"; sourceTree = "<group>"; };
 		0D66D6C4191C7BB500510F35 /* JNLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNLogger.h; sourceTree = "<group>"; };
 		0D66D6C5191C7BB500510F35 /* JNLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNLogger.m; sourceTree = "<group>"; };
+		0DC855AB191D9A2200396425 /* HBBaseWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBBaseWelcomeViewController.xib; sourceTree = "<group>"; };
 		B8295428D3884273B3B149DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DAEEE7DE87B34958B55F4214 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -452,6 +454,7 @@
 				0D515719191D59ED00FD9378 /* HBWelcomeFlow.m */,
 				0D51571B191D5A7A00FD9378 /* HBBaseWelcomeViewController.h */,
 				0D51571C191D5A7A00FD9378 /* HBBaseWelcomeViewController.m */,
+				0DC855AB191D9A2200396425 /* HBBaseWelcomeViewController.xib */,
 				0D515721191D60F000FD9378 /* HBWelcomeStartViewController.h */,
 				0D515722191D60F000FD9378 /* HBWelcomeStartViewController.m */,
 				0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */,
@@ -752,6 +755,7 @@
 				0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */,
 				0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */,
 				0D515715191D591500FD9378 /* Localizable.strings in Resources */,
+				0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */,
 				0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */,
 				0D51570C191D3BA000FD9378 /* DiallingCodes.plist in Resources */,
 				0D66D67F191C7A6100510F35 /* InfoPlist.strings in Resources */,

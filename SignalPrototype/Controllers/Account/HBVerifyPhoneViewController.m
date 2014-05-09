@@ -50,15 +50,15 @@
 {
     _hasValidPinNumber = hasValidPinNumber;
     runOnMainQueue(^{
-        if (hasValidPinNumber.boolValue) {
+//        if (hasValidPinNumber.boolValue) {
             self.navigationItem.rightBarButtonItem.customView.hidden = NO;
             [self.pinTextField addToolBarItem:JNLocalizedString(@"next.toolbar.button.text") target:self action:@selector(nextAction:)];
             [self.pinTextField setNeedsDisplay];
-        } else {
-            self.navigationItem.rightBarButtonItem.customView.hidden = YES;
-            [self.pinTextField removeToolBarItems];
-            [self.pinTextField setNeedsDisplay];
-        }
+//        } else {
+//            self.navigationItem.rightBarButtonItem.customView.hidden = YES;
+//            [self.pinTextField removeToolBarItems];
+//            [self.pinTextField setNeedsDisplay];
+//        }
     });
 }
 
@@ -84,6 +84,8 @@
     
     // log metric
     [SGSession didOnboardingActivity:kSGOnboardingVerifyPhone];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)setupNavigationBar
@@ -152,6 +154,8 @@
         [textField reloadInputViews];
         textField.textColor = JNBlackTextColor;
     }
+    
+    [self.pinTextField addToolBarItem:JNLocalizedString(@"next.toolbar.button.text") target:self action:@selector(nextAction:)];
 }
 
 - (void)setupSignals
@@ -160,7 +164,7 @@
     
     RAC(self, hasValidPinNumber) = [RACSignal combineLatest:@[RACObserve(self.pinTextField, text)]
                                                      reduce:^(NSString *pin) {
-                                                         return @([NSString isNotEmptyString:pin]);
+                                                         return @([NSString isNotEmptyString:self.pinTextField.text]);
                                                      }];
 }
 
@@ -214,9 +218,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [textField addToolbarWithDoneTarget:nil doneAction:nil
-                             prevTarget:nil prevAction:nil
-                             nextTarget:nil nextAction:nil];
+//    [textField addToolbarWithDoneTarget:nil doneAction:nil
+//                             prevTarget:nil prevAction:nil
+//                             nextTarget:nil nextAction:nil];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

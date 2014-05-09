@@ -208,7 +208,7 @@ static UIImageView *_navigationBarLogoImageView;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.bounds = (CGRect) {CGPointZero, {width, self.navigationController.navigationBar.bounds.size.height}};
     [button setTitle:text forState:UIControlStateNormal];
-    [button setTitleColor:JNWhiteColor forState:UIControlStateNormal];
+    [button setTitleColor:JNBlackTextColor forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont primaryFontWithTitleSize];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
