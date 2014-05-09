@@ -122,6 +122,16 @@
     return [icon imageWithSize:CGSizeMake(size, size)];
 }
 
++ (UIImage*)inboxImageIconWithSize:(CGFloat)size color:(UIColor*)color
+{
+    FAKIonIcons *icon = [FAKIonIcons ios7FilingOutlineIconWithSize:size];
+    if (color) {
+        [icon addAttribute:NSForegroundColorAttributeName value:color];
+    }
+    return [icon imageWithSize:CGSizeMake(size, size)];
+}
+
+
 #pragma mark - NSAttributedString
 
 + (NSAttributedString*)cancelIconWithSize:(CGFloat)size color:(UIColor*)color

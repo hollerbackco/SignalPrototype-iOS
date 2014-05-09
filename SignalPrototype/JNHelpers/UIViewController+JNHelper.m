@@ -392,6 +392,17 @@ static UIImageView *_navigationBarLogoImageView;
     self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
 
+- (void)applyInboxNavigationButtonWithTarget:(id)target action:(SEL)action
+{
+    UIImage *cancelImage = [JNIcon inboxImageIconWithSize:30.0 color:JNGrayColor];
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, cancelImage.size.width, cancelImage.size.height)];
+    [cancelButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setImage:cancelImage forState:UIControlStateNormal];
+    cancelButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, -14.0);
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    self.navigationItem.rightBarButtonItem = leftBarButtonItem;
+}
+
 #pragma mark - Views
 
 - (void)showView:(UIView*)view animated:(BOOL)animated

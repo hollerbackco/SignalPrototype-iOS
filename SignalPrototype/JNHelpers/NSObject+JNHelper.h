@@ -49,6 +49,16 @@ void runOnAsyncDefaultQueue(void (^block)(void));
 
 + (BOOL)isNotNullDate:(id)object;
 
++ (NSDateFormatter *)dateFormatter;
+
++ (NSDateFormatter*)dayTimeDateFormatter;
+
++ (NSInteger)daysBetweenFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate;
+
++ (NSDate*)addDays:(NSInteger)daysToAdd toDate:(NSDate*)date;
+
++ (NSInteger)secondsBetweenFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate;
+
 @end
 
 @interface NSNumber (JNHelper)

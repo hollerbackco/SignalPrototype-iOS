@@ -116,6 +116,8 @@ extern CGFloat const kJNNavigationBarButtonLongWidth;
 
 - (void)applyPlusNavigationButtonWithTarget:(id)target action:(SEL)action;
 
+- (void)applyInboxNavigationButtonWithTarget:(id)target action:(SEL)action;
+
 #pragma mark - Views
 
 - (void)showView:(UIView*)view animated:(BOOL)animated;

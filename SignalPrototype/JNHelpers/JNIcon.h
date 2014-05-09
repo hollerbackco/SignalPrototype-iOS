@@ -24,6 +24,7 @@
 + (UIImage*)microphoneImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (UIImage*)peopleImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (UIImage*)lockedImageIconWithSize:(CGFloat)size color:(UIColor*)color;
++ (UIImage*)inboxImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 
 #pragma mark - NSAttributedString
 

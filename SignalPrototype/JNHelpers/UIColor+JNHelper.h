@@ -16,6 +16,8 @@
 #define JNClearColor [UIColor clearColor]
 #define JNWhiteColor [UIColor whiteColor]
 #define JNBlackColor [UIColor blackColor]
+#define JNLightGrayColor [UIColor lightGrayColor]
+#define JNGrayColor [UIColor grayColor]
 
 #pragma mark Gradient
 

@@ -82,6 +82,73 @@ void runOnAsyncDefaultQueue(void (^block)(void))
     return object && [object isKindOfClass:[NSDate class]];
 }
 
+static NSDateFormatter *_dateFormatter;
+static NSDateFormatter *_dayTimeDateFormatter;
+
++ (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        _dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+        _dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    };
+    return _dateFormatter;
+}
+
++ (NSDateFormatter*)dayTimeDateFormatter
+{
+    if (!_dayTimeDateFormatter) {
+        _dayTimeDateFormatter = [[NSDateFormatter alloc] init];
+        _dayTimeDateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        _dayTimeDateFormatter.timeZone = [NSTimeZone systemTimeZone];
+        _dayTimeDateFormatter.dateFormat = @"MMM dd, h:mm a";
+        _dayTimeDateFormatter.AMSymbol = @"am";
+        _dayTimeDateFormatter.PMSymbol = @"pm";
+    };
+    return _dayTimeDateFormatter;
+}
+
++ (NSInteger)daysBetweenFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate
+                 interval:NULL
+                  forDate:fromDate];
+    [calendar rangeOfUnit:NSDayCalendarUnit
+                startDate:&toDate
+                 interval:NULL forDate:toDate];
+    NSDateComponents *difference = [calendar components:NSDayCalendarUnit
+                                               fromDate:fromDate
+                                                 toDate:toDate
+                                                options:0];
+    return difference.day;
+}
+
++ (NSDate*)addDays:(NSInteger)daysToAdd toDate:(NSDate*)date
+{
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = daysToAdd;
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    return [calendar dateByAddingComponents:dayComponent toDate:date options:0];
+}
+
++ (NSInteger)secondsBetweenFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar rangeOfUnit:NSSecondCalendarUnit startDate:&fromDate
+                 interval:NULL
+                  forDate:fromDate];
+    [calendar rangeOfUnit:NSSecondCalendarUnit
+                startDate:&toDate
+                 interval:NULL forDate:toDate];
+    NSDateComponents *difference = [calendar components:NSSecondCalendarUnit
+                                               fromDate:fromDate
+                                                 toDate:toDate
+                                                options:0];
+    return labs(difference.second);
+}
+
 @end
 
 @implementation NSNumber (JNHelper)
