@@ -19,6 +19,15 @@
 		0D66D690191C7A6100510F35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D678191C7A6100510F35 /* UIKit.framework */; };
 		0D66D698191C7A6100510F35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D66D696191C7A6100510F35 /* InfoPlist.strings */; };
 		0D66D69A191C7A6100510F35 /* SignalPrototypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D699191C7A6100510F35 /* SignalPrototypeTests.m */; };
+		0D66D6B9191C7B6E00510F35 /* JNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6A5191C7B6E00510F35 /* JNAlertView.m */; };
+		0D66D6BA191C7B6E00510F35 /* JNIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6A7191C7B6E00510F35 /* JNIcon.m */; };
+		0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6A9191C7B6E00510F35 /* JNViewController.m */; };
+		0D66D6BC191C7B6E00510F35 /* NSObject+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6AB191C7B6E00510F35 /* NSObject+JNHelper.m */; };
+		0D66D6BD191C7B6E00510F35 /* UIColor+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6AD191C7B6E00510F35 /* UIColor+JNHelper.m */; };
+		0D66D6BE191C7B6E00510F35 /* UIFont+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6AF191C7B6E00510F35 /* UIFont+JNHelper.m */; };
+		0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B1191C7B6E00510F35 /* UIImage+JNHelper.m */; };
+		0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */; };
+		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,24 @@
 		0D66D695191C7A6100510F35 /* SignalPrototypeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SignalPrototypeTests-Info.plist"; sourceTree = "<group>"; };
 		0D66D697191C7A6100510F35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D66D699191C7A6100510F35 /* SignalPrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignalPrototypeTests.m; sourceTree = "<group>"; };
+		0D66D6A4191C7B6E00510F35 /* JNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNAlertView.h; sourceTree = "<group>"; };
+		0D66D6A5191C7B6E00510F35 /* JNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNAlertView.m; sourceTree = "<group>"; };
+		0D66D6A6191C7B6E00510F35 /* JNIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNIcon.h; sourceTree = "<group>"; };
+		0D66D6A7191C7B6E00510F35 /* JNIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNIcon.m; sourceTree = "<group>"; };
+		0D66D6A8191C7B6E00510F35 /* JNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNViewController.h; sourceTree = "<group>"; };
+		0D66D6A9191C7B6E00510F35 /* JNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNViewController.m; sourceTree = "<group>"; };
+		0D66D6AA191C7B6E00510F35 /* NSObject+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6AB191C7B6E00510F35 /* NSObject+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6AC191C7B6E00510F35 /* UIColor+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6AD191C7B6E00510F35 /* UIColor+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6AE191C7B6E00510F35 /* UIFont+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6AF191C7B6E00510F35 /* UIFont+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6B0191C7B6E00510F35 /* UIImage+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6B1191C7B6E00510F35 /* UIImage+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6B2191C7B6E00510F35 /* UIView+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JNHelper.m"; sourceTree = "<group>"; };
+		0D66D6B4191C7B6E00510F35 /* UIViewController+JNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JNHelper.h"; sourceTree = "<group>"; };
+		0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JNHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +136,7 @@
 			children = (
 				0D66D683191C7A6100510F35 /* SGAppDelegate.h */,
 				0D66D684191C7A6100510F35 /* SGAppDelegate.m */,
+				0D66D6A3191C7B6E00510F35 /* JNHelpers */,
 				0D66D686191C7A6100510F35 /* Images.xcassets */,
 				0D66D67B191C7A6100510F35 /* Supporting Files */,
 			);
@@ -142,6 +170,31 @@
 				0D66D696191C7A6100510F35 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D66D6A3191C7B6E00510F35 /* JNHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D66D6A4191C7B6E00510F35 /* JNAlertView.h */,
+				0D66D6A5191C7B6E00510F35 /* JNAlertView.m */,
+				0D66D6A6191C7B6E00510F35 /* JNIcon.h */,
+				0D66D6A7191C7B6E00510F35 /* JNIcon.m */,
+				0D66D6A8191C7B6E00510F35 /* JNViewController.h */,
+				0D66D6A9191C7B6E00510F35 /* JNViewController.m */,
+				0D66D6AA191C7B6E00510F35 /* NSObject+JNHelper.h */,
+				0D66D6AB191C7B6E00510F35 /* NSObject+JNHelper.m */,
+				0D66D6AC191C7B6E00510F35 /* UIColor+JNHelper.h */,
+				0D66D6AD191C7B6E00510F35 /* UIColor+JNHelper.m */,
+				0D66D6AE191C7B6E00510F35 /* UIFont+JNHelper.h */,
+				0D66D6AF191C7B6E00510F35 /* UIFont+JNHelper.m */,
+				0D66D6B0191C7B6E00510F35 /* UIImage+JNHelper.h */,
+				0D66D6B1191C7B6E00510F35 /* UIImage+JNHelper.m */,
+				0D66D6B2191C7B6E00510F35 /* UIView+JNHelper.h */,
+				0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */,
+				0D66D6B4191C7B6E00510F35 /* UIViewController+JNHelper.h */,
+				0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */,
+			);
+			path = JNHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +293,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D66D6BA191C7B6E00510F35 /* JNIcon.m in Sources */,
+				0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */,
 				0D66D685191C7A6100510F35 /* SGAppDelegate.m in Sources */,
+				0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */,
+				0D66D6BC191C7B6E00510F35 /* NSObject+JNHelper.m in Sources */,
+				0D66D6BE191C7B6E00510F35 /* UIFont+JNHelper.m in Sources */,
+				0D66D6BD191C7B6E00510F35 /* UIColor+JNHelper.m in Sources */,
+				0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */,
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
+				0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */,
+				0D66D6B9191C7B6E00510F35 /* JNAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

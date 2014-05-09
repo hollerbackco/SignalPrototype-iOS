@@ -1,0 +1,265 @@
+//
+//  UIView+JNHelper.m
+//  HollerbackApp
+//
+//  Created by Joe Nguyen on 15/03/13.
+//  Copyright (c) 2013 Hollerback. All rights reserved.
+//
+
+#import "UIView+JNHelper.h"
+#import "UIColor+JNHelper.h"
+
+CGFloat const kHBViewAnimationFastDuration = 0.3;
+
+@implementation UIView (JNHelper)
+
++ (void)hideAndRemoveView:(UIView*)view
+{
+    [UIView animateWithDuration:kHBViewAnimationFastDuration animations:^{
+        view.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [view performBlock:^{
+            [view removeFromSuperview];
+        } afterDelay:kHBViewAnimationFastDuration];
+    }];
+}
+
++ (void)animateLayoutConstraintsWithContainerView:(UIView*)containerView
+                                        childView:(UIView*)childView
+                                         duration:(NSTimeInterval)duration
+                                       animations:(void (^)(void))animations
+{
+    [self.class animateLayoutConstraintsWithContainerView:containerView
+                                                childView:childView
+                                                 duration:duration
+                                               animations:animations
+                                               completion:nil];
+}
+
++ (void)animateLayoutConstraintsWithContainerView:(UIView*)containerView
+                                        childView:(UIView*)childView
+                                         duration:(NSTimeInterval)duration
+                                       animations:(void (^)(void))animations
+                                       completion:(void (^)(BOOL finished))completion
+{
+    [containerView layoutIfNeeded];
+    [UIView animateWithDuration:duration animations:^{
+        if (animations) animations();
+        [childView setNeedsUpdateConstraints];
+        [containerView layoutIfNeeded];
+    } completion:completion];
+}
+
++ (void)transformViewFlipHorizontally:(UIView*)view
+{
+    view.transform = CGAffineTransformMakeRotation(M_PI);
+}
+
++ (void)transformViewRotate180:(UIView*)view
+{
+    view.transform = CGAffineTransformMakeRotation(-M_PI);
+}
+
+- (void)fadeInAnimated:(BOOL)animated
+{
+    [self fadeInAnimated:animated complete:nil];
+}
+
+- (void)fadeOutAnimated:(BOOL)animated
+{
+    [self fadeOutAnimated:animated complete:nil];
+}
+
+- (void)fadeInAnimated:(BOOL)animated complete:(HBViewComplete)complete
+{
+    if (self.hidden) {
+        [self toggleAnimated:animated complete:complete];
+    } else {
+        if (complete)
+            complete(YES);
+    }
+}
+
+- (void)fadeOutAnimated:(BOOL)animated complete:(HBViewComplete)complete
+{
+    if (!self.hidden) {
+        [self toggleAnimated:animated complete:complete];
+    } else {
+        if (complete)
+            complete(YES);
+    }
+}
+
+- (void)toggleAnimated:(BOOL)animated complete:(HBViewComplete)complete
+{
+    if (!animated) {
+        self.hidden = !self.hidden;
+        if (complete)
+            complete(YES);
+        return;
+    }
+    self.alpha = (self.hidden) ? 0.0 : 1.0;
+    [UIView animateWithDuration:kHBViewAnimationFastDuration
+                     animations:^{
+                         self.alpha = (self.alpha == 0.0) ? 1.0 : 0.0;
+                     }
+                     completion:^(BOOL finished) {
+                         self.hidden = !self.hidden;
+                         if (complete)
+                             complete(finished);
+                     }];
+}
+
+- (void)setCircleLayerMask
+{
+    self.layer.cornerRadius = self.bounds.size.width/2;
+    self.layer.masksToBounds = YES;
+}
+
+- (void)applyDarkShadowLayer
+{
+    self.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.6;
+    self.layer.shadowRadius = 0.5;
+}
+
+- (void)applyDarkerShadowLayer
+{
+    self.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 2.0;
+    self.layer.shadowRadius = 1.0;
+}
+
+- (void)applyDarkBottomShadowLayer
+{
+    self.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOpacity = 0.6;
+    self.layer.shadowRadius = 1.0;
+}
+
+- (void)applyGradientBackgroundWithTopColor:(UIColor*)topColor bottomColor:(UIColor*)bottomColor
+{
+    self.backgroundColor = [UIColor clearColor];
+    CAGradientLayer *gradientLayer = [UIColor gradientWithTopColor:topColor bottomColor:bottomColor];
+    gradientLayer.bounds = self.bounds;
+    gradientLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    [self.layer insertSublayer:gradientLayer atIndex:0];
+}
+
+- (void)removeAllSublayers
+{
+    self.layer.sublayers = nil;
+}
+
+#pragma mark - Rounded Corner
+
+- (void)applyRoundedCornerWithRadius:(CGFloat)radius
+{
+    self.layer.cornerRadius = radius;
+    self.layer.masksToBounds = YES;
+}
+
+- (void)removeRoundedCorner
+{
+    self.layer.cornerRadius = 0.0;
+    self.layer.masksToBounds = NO;
+}
+
+@end
+
+#pragma mark - CALayer
+
+@implementation CALayer (JNHelper)
+
++ (CALayer*)circleLayerWithSize:(CGSize)circleSize
+                    strokeColor:(UIColor*)strokeColor
+                      fillColor:(UIColor*)fillColor
+                      lineWidth:(CGFloat)lineWidth
+{
+    CGPoint position = CGPointMake(circleSize.width/2, circleSize.height/2);
+    return [[self class] circleLayerWithSize:circleSize
+                                    position:position
+                                 strokeColor:strokeColor
+                                   fillColor:fillColor
+                                   lineWidth:lineWidth];
+}
+
++ (CALayer*)circleLayerWithSize:(CGSize)circleSize
+                       position:(CGPoint)position
+                    strokeColor:(UIColor*)strokeColor
+                      fillColor:(UIColor*)fillColor
+                      lineWidth:(CGFloat)lineWidth
+{
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    circleLayer.bounds = (CGRect){CGPointZero, circleSize};
+    circleLayer.position = position;
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:(CGRect){CGPointZero, circleSize}];
+    circleLayer.path = [path CGPath];
+    if (strokeColor) {
+        circleLayer.strokeColor = strokeColor.CGColor;
+    }
+    if (fillColor) {
+        circleLayer.fillColor = fillColor.CGColor;
+    }
+    circleLayer.lineWidth = lineWidth;
+    
+    return circleLayer;
+}
+
+@end
+
+
+
+
+#pragma mark - HBViewWithTouchableSubviews
+
+@implementation HBViewWithTouchableSubviews : UIView
+
+-(id)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
+    id hitView = [super hitTest:point withEvent:event];
+    if (hitView == self) return nil;
+    else return hitView;
+}
+
+@end
+
+
+
+
+
+
+
+
+#pragma mark - CALayer (RoundedCorners)
+
+@implementation CALayer (RoundedCorners)
+
++ (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius view:(UIView*)view
+{
+    // To round all corners, we can just set the radius on the layer
+    if ( corners == UIRectCornerAllCorners ) {
+        view.layer.cornerRadius = radius;
+        view.layer.masksToBounds = YES;
+    } else {
+        view.layer.cornerRadius = 0.0;
+        view.layer.mask = [CALayer maskLayerWithCorners:corners radii:CGSizeMake(radius, radius) frame:view.bounds];
+    }
+}
+
++ (id)maskLayerWithCorners:(UIRectCorner)corners radii:(CGSize)radii frame:(CGRect)frame
+{
+    // Create a CAShapeLayer
+    CAShapeLayer *mask = [CAShapeLayer layer];
+    mask.frame = frame;
+    mask.path = [UIBezierPath bezierPathWithRoundedRect:mask.bounds byRoundingCorners:corners cornerRadii:radii].CGPath;
+    mask.fillColor = [UIColor whiteColor].CGColor;
+    return mask;
+}
+
+@end
+
