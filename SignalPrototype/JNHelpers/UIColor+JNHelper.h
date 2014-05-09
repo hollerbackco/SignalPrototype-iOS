@@ -19,6 +19,9 @@
 #define JNLightGrayColor [UIColor lightGrayColor]
 #define JNGrayColor [UIColor grayColor]
 
+#define JNGrayBackgroundColor JNColorWithRGB(228,228,228,1)
+#define JNBlackTextColor JNColorWithRGB(8,8,8,1)
+
 #pragma mark Gradient
 
 + (CAGradientLayer*)gradientWithTopColor:(UIColor*)topColor bottomColor:(UIColor*)bottomColor;

@@ -11,7 +11,6 @@
 
 #import "UIFont+JNHelper.h"
 #import "UIColor+JNHelper.h"
-#import "UIView+JNHelper.h"
 #import "UIImage+JNHelper.h"
 #import "UIViewController+JNHelper.h"
 #import "JNIcon.h"

@@ -6,13 +6,28 @@
 //  Copyright (c) 2014 Signal. All rights reserved.
 //
 
+#import <EXTScope.h>
+
+#import "JNSimpleDataStore.h"
+
 #import "SGAppDelegate.h"
+#import "SGSession.h"
 #import "SGCreateThreadViewController.h"
+#import "SGInitialViewController.h"
+#import "SGUser+Service.h"
+
+#import "HBWelcomeFlow.h"
+#import "HBPushNotificationHandler.h"
 
 @interface SGAppDelegate ()
 
-@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UINavigationController *conversationsNavigationController;
 @property (nonatomic, strong) SGCreateThreadViewController *createThreadViewController;
+
+@property (nonatomic, strong) UINavigationController *accountNavigationController;
+@property (nonatomic, strong) SGInitialViewController *initialViewController;
+
+@property (nonatomic, strong) HBWelcomeFlow *welcomeFlow;
 
 @end
 
@@ -32,16 +47,54 @@
 
 - (void)setupRootViewController
 {
+    if ([[SGSession sharedInstance] isLoggedIn]) {
+        
+        [self setupConversationsRootViewController];
+        
+    } else {
+        
+        [self startWelcomeFlow];
+    }
+}
+
+- (void)setupConversationsRootViewController
+{
     if (!self.createThreadViewController) {
         self.createThreadViewController = [[SGCreateThreadViewController alloc] initWithNib];
     }
     
-    if (!self.navigationController) {
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.createThreadViewController];
+    if (!self.conversationsNavigationController) {
+        self.conversationsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.createThreadViewController];
     }
     
-    self.window.rootViewController = self.navigationController;
+    self.window.rootViewController = self.conversationsNavigationController;
 }
+
+#pragma mark - Welcome Flow
+
+- (void)startWelcomeFlow
+{
+    JNLog();
+    [[SGSession sharedInstance] didStartWelcomeFlow];
+
+    self.welcomeFlow = [HBWelcomeFlow new];
+    [self.welcomeFlow startWelcomeFlowCompleted:nil];
+    self.window.rootViewController = self.welcomeFlow.welcomeStartNavigationController;
+    // go to login
+    @weakify(self);
+    self.welcomeFlow.didLoginBlock = ^() {
+        
+        [self_weak_ setupRootViewController];
+        // check for push registration
+        [self_weak_ checkForPushRegistration];
+    };
+    self.welcomeFlow.finishWelcomeFlowBlock = ^() {
+        
+        [self_weak_ setupRootViewController];
+    };
+}
+
+#pragma mark - Application Background / Active
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -68,6 +121,65 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Remote Notifications (Push)
+
+- (void)checkForPushRegistration
+{
+    if (![HBPushNotificationHandler didAttemptToRegisterPushNotifications]) {
+        JNLogPrimitive([HBPushNotificationHandler didAttemptToRegisterPushNotifications]);
+        [[HBPushNotificationHandler sharedInstance] startAllowPushFlowInViewController:self.createThreadViewController];
+    }
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSString *hexToken = [HBPushNotificationHandler generateHexToken:deviceToken];
+    JNLogObject(hexToken);
+    NSString *storedDeviceToken = (NSString*) [JNSimpleDataStore getValueForKey:SGDeviceTokenKey];
+    JNLogObject(storedDeviceToken);
+    if (![NSString isNotEmptyString:storedDeviceToken]) {
+        [SGUser updateDeviceTokenForCurrentUser:hexToken completed:^{
+            JNLog(@"completed");
+        } failed:^{
+            JNLog(@"failed");
+        }];
+    }
+    // store device token
+    [JNSimpleDataStore setValue:hexToken forKey:SGDeviceTokenKey];
+    // log metric
+    [SGSession didOnboardingActivity:kSGOnboardingPush
+                          parameters:@{kSGOnboardingAllowedKey:@(YES)}];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	JNLog(@"Failed to get token, error: %@", error);
+    [HBPushNotificationHandler failedToRegisterForPushNotifications];
+    // log metric
+    [SGSession didOnboardingActivity:kSGOnboardingPush
+                          parameters:@{kSGOnboardingAllowedKey:@(NO)}];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    JNLog(@"application.applicationState: %@, userInfo: %@",@(application.applicationState), userInfo);
+    // save push payload info
+    [[HBPushNotificationHandler sharedInstance] handlePushPayload:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    JNLog(@"application.applicationState: %@, userInfo: %@",@(application.applicationState), userInfo);
+    
+    // save push payload info
+    [[HBPushNotificationHandler sharedInstance] handlePushPayload:userInfo];
+    
+    // sync with remote
+    [[SGSession sharedInstance] syncWithRemoteCompleted:^{
+        JNLog(@"sync completed");
+    }];
 }
 
 @end

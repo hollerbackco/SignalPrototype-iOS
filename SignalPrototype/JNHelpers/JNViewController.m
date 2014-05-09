@@ -75,6 +75,9 @@
 
 - (void)setupNavigationBar
 {
+    [self applyOpaqueNavigationBarStyle];
+    
+    [self applyNavigationBarTitle:self.title];
 }
 
 #pragma mark - Actions

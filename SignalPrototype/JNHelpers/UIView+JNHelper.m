@@ -263,3 +263,105 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
 
 @end
 
+
+
+
+
+
+
+
+
+#pragma mark - UITextField (JNHelper)
+
+@interface UITextField ()
+
+@property (nonatomic, strong) UIToolbar *toolbar;
+
+@end
+
+@implementation UITextField (JNHelper)
+
+- (void)addToolBarItem:(NSString*)title target:(id)target action:(SEL)action
+{
+    NSMutableArray *items = [@[] mutableCopy];
+    if ([NSArray isEmptyArray:self.toolbar.items]) {
+        // Flex
+        UIBarButtonItem *flexButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [items addObject:flexButton];
+        // Done
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStyleBordered target:target action:action];
+        [items addObject:button];
+        
+        self.toolbar.items = items;
+    }
+}
+
+- (void)addToolbarWithDoneTarget:(id)doneTarget doneAction:(SEL)doneAction
+prevTarget:(id)prevTarget prevAction:(SEL)prevAction
+nextTarget:(id)nextTarget nextAction:(SEL)nextAction
+{
+    if (!self.toolbar) {
+        self.toolbar = [[UIToolbar alloc] init];
+        [self.toolbar setBarStyle:UIBarStyleDefault];
+        [self.toolbar sizeToFit];
+    } else {
+        self.toolbar.items = nil;
+    }
+    
+    NSMutableArray *items = [@[] mutableCopy];
+    
+    // Previous
+    if (prevTarget && prevAction) {
+        UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:prevTarget action:prevAction];
+        [items addObject:prevButton];
+    }
+    // Next
+    if (nextTarget && nextAction) {
+        UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:nextTarget action:nextAction];
+        [items addObject:nextButton];
+    }
+    
+    if (doneTarget && doneAction) {
+        // Flex
+        UIBarButtonItem *flexButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [items addObject:flexButton];
+        // Done
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:doneTarget action:doneAction];
+        [items addObject:doneButton];
+    }
+    
+    self.toolbar.items = items;
+    self.inputAccessoryView = self.toolbar;
+}
+
+- (void)removeToolBarItems
+{
+    [self.toolbar setItems:@[] animated:YES];
+}
+
+@end
+
+
+
+
+
+
+
+
+
+#pragma mark - UIBarButtonItem (JNHelper)
+
+@implementation UIBarButtonItem (JNHelper)
+
+- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action font:(UIFont*)font textColor:(UIColor*)textColor
+{
+    if (self == [self initWithBarButtonSystemItem:systemItem target:target action:action]) {
+        [[UIBarButtonItem appearance]
+         setTitleTextAttributes:@{NSFontAttributeName : font,
+                                  NSForegroundColorAttributeName: textColor}
+         forState:UIControlStateNormal];
+    }
+    return self;
+}
+
+@end

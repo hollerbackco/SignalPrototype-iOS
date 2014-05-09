@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <ReactiveCocoa.h>
 
+#import "UIView+JNHelper.h"
+
 #if IS_IOS7_OR_GREATER
     #define kJNNavBarBackNavIconImageOffset CGPointMake(-24.0, 0.0)
 #else

@@ -101,3 +101,34 @@ typedef void(^HBViewComplete)(BOOL finished);
 
 
 
+
+
+#pragma mark - UITextField (JNHelper)
+
+@interface UITextField (JNHelper)
+
+- (void)addToolBarItem:(NSString*)title target:(id)target action:(SEL)action;
+
+- (void)addToolbarWithDoneTarget:(id)doneTarget doneAction:(SEL)doneAction
+                      prevTarget:(id)prevTarget prevAction:(SEL)prevAction
+                      nextTarget:(id)nextTarget nextAction:(SEL)nextAction;
+
+- (void)removeToolBarItems;
+
+@end
+
+
+
+
+
+
+
+#pragma mark - UIBarButtonItem (JNHelper)
+
+@interface UIBarButtonItem (JNHelper)
+
+- (id)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action font:(UIFont*)font textColor:(UIColor*)textColor;
+
+@end
+
+

@@ -1,0 +1,333 @@
+/* 
+  Localizable.strings
+  HollerbackApp
+
+  Created by Joe Nguyen on 24/07/13.
+  Copyright (c) 2013 Hollerback. All rights reserved.
+*/
+
+
+
+
+
+
+
+/* General */
+"next.nav.bar.button.text" = "next";
+"next.toolbar.button.text" = "next";
+"done.toolbar.button.text" = "done";
+
+
+
+
+/* Failed requests */
+"failed.request.alert.title" = "Oops";
+"failed.request.alert.body" = "Sorry, something went wrong. Please try that again.";
+"failed.request.check.contacts.alert.body" = "Sorry, there was a problem processing your contacts. Try again a little later.";
+"failed.request.recently.read.messages.alert.body" = "Sorry, there was a problem with getting these messages. Try again a little later.";
+"failed.request.user.details.alert.body" = "Sorry, there was a problem with getting your user details. Try again a little later.";
+
+
+
+
+
+/* Initial */
+"initial.copy" = "talk to your friends anytime, anywhere";
+
+
+
+
+
+/* Welcome */
+
+// Welcome Start
+"welcome.start.title" = "Hollerback";
+"welcome.start.body" = "Send short, fun video messages";
+"welcome.start.first.button.text" = "Sign Up";
+"welcome.start.second.button.text" = "Log In";
+
+// Sign Up
+"sign.up.title" = "Sign Up";
+
+// Welcome Intro
+"welcome.intro.title" = "Welcome to Hollerback";
+"welcome.intro.carousel.one" = "Talk to friends and family with
+short, fun video messages.";
+"welcome.intro.carousel.two" = "It's like a video walkie talkie.
+Roger that? Over and out.";
+"welcome.intro.carousel.three" = "Tap above to check out
+our welcome video";
+"welcome.intro.button.text" = "Give It a Try";
+
+// Allow Microphone
+"welcome.allow.microphone.title" = "Let's get started";
+"welcome.allow.microphone.body" = "Hollerback relies on your
+phone's mic to record the
+sound for your videos.
+
+You don't want silent videos
+do you?";
+"welcome.allow.microphone.second.button.text" = "Allow Microphone Access";
+"welcome.allow.microphone.denied.alert.title" = "Warning";
+"welcome.allow.microphone.denied.alert.body" = "You've denied us access to your microphone.
+
+You won't be able to send any videos.
+
+Turn it on at Settings -> Privacy -> Microphone -> Hollerback.";
+
+// Allow Contacts
+"welcome.allow.contacts.title" = "Let's get started";
+"welcome.allow.contacts.body" = "We use your phone's contacts 
+to help you find your friends.
+
+We keep your info safe and
+we'll never spam your friends.";
+"welcome.allow.contacts.second.button.text" = "Allow Contacts";
+"welcome.allow.contacts.denied.alert.title" = "Warning";
+"welcome.allow.contacts.denied.alert.body" = "You've denied us access to your contacts.
+
+This makes it hard to find your friends on Hollerback.
+
+Turn it on at Settings -> Privacy -> Contacts -> Hollerback.";
+
+// Allow Push
+"welcome.allow.push.title" = "Let's get started";
+"welcome.allow.push.logged.in.title" = "Push notifications";
+"welcome.allow.push.body" = "We send a notification when 
+your friend sends you a video
+message.
+
+We only push when important :)";
+"welcome.allow.push.second.button.text" = "Allow Push Notifications";
+"welcome.allow.push.denied.alert.title" = "Warning";
+"welcome.allow.push.denied.alert.body" = "You've denied push notifications.
+
+You won't be notified when a friend sends you a message.
+
+Turn it on at Settings -> Notification Center -> Hollerback.";
+
+// Start Conversation
+"welcome.start.conversation.title" = "Start a conversation";
+"welcome.start.conversation.body" = "Pick a friend or family member
+to receive your first message.
+
+They'll get your video via text
+if they don't have the app.";
+"welcome.start.conversation.second.button.text" = "Let's send a message!";
+
+// Create Group
+"welcome.create.group.title" = "Create a group";
+"welcome.create.group.body" = "Select a few friends from school 
+to create your first group.
+
+They'll get your video via text 
+if they don't have the app.";
+"welcome.create.group.second.button.text" = "Create a group!";
+"welcome.create.group.tooltip.text" = "Tap here to enter a group name.";
+
+// Create Group Done
+"welcome.create.group.done.title" = "Long time, no see";
+"welcome.create.group.done.body" = "Talk with friends no matter 
+where they are.
+
+They'll get your video via text 
+if they don't have the app.";
+"welcome.create.group.done.second.button.text" = "Let's send a message!";
+
+
+
+
+
+
+/* Conversation List */
+"convo.list.how.it.works.title" = "Welcome to Hollerback";
+"convo.list.table.footer.button1.text" = "Next: Start a conversation";
+"convo.list.table.footer.button2.text" = "Next: Create a group";
+"convo.list.table.footer.button3.text" = "Next: Send a message to 
+friends across the country";
+
+
+
+
+
+/* Thread View */
+"thread.view.empty.thread.text" = "Hold the middle button
+to start your video.
+
+Release to send.
+
+You can cancel by sliding your finger to the right while recording.
+
+Slide your finger to the left while recording to flip the camera.
+
+If your friend doesn't have
+the app, they'll get the video via text.
+
+See how their day is going!
+";
+"thread.view.how.it.works.alert.title" = "welcome to hollerback!";
+"thread.view.how.it.works.alert.body" = "go ahead and play around with the camera and try on some costumes!
+
+the videos in this conversation don't go anywhere :)";
+
+
+
+/* Thread Camera */
+"thread.camera.hold.to.record.tipsy.text" = "Hold to record, tap to flip!";
+"thread.camera.slide.to.cancel.text" = "> slide to cancel";
+"thread.camera.overlay.cancel.text" = "release
+to cancel";
+"thread.camera.overlay.flip.to.back.text" = "drag left
+to flip camera";
+"thread.camera.overlay.flip.to.front.text" = "drag right
+to flip camera";
+"thread.camera.min.record.time.alert.title" = "Oops";
+"thread.camera.min.record.time.alert.body" = "Sorry, that video was too short! Try recording a little longer next time.";
+
+// first time recording
+"thread.camera.pre.recording.alert.title" = "Quick Tip";
+"thread.camera.pre.recording.alert.body" = "Hollerback starts recording as soon as you hold the preview circle below. 
+
+Keep holding while you talk!";
+
+"thread.camera.post.recording.alert.title" = "Quick Tip";
+"thread.camera.post.recording.alert.body" = "Hollerback sends your video when you stop holding.
+
+To cancel during recording, just drag to the right and release.";
+"thread.camera.post.recording.alert.first.text" = "Don't Send";
+"thread.camera.post.recording.alert.second.text" = "Send Video";
+"thread.camera.post.recording.alert.third.text" = "Send and don't show this again";
+
+
+
+
+/* Thread Text */
+"thread.text.empty.thread.alert.title" = "Hey";
+"thread.text.empty.thread.alert.body" = "Why don't you send a video first?";
+
+
+
+
+/* Costumes */
+"costume.label.prefix" = "Current Preview: ";
+"costume.type.none" = "None";
+"costume.type.squeeze" = "Squeeze";
+"costume.type.buggin" = "Buggin";
+"costume.type.hungry" = "Hungry";
+"costume.type.metwo" = "Me Two";
+"costume.type.stache" = "Stache";
+"costume.type.graucho" = "Graucho";
+"costume.type.clown" = "Clown";
+"costume.type.batman" = "Batman";
+"costume.type.cat" = "Cat";
+"costume.type.bunny" = "Bunny";
+"costume.type.ronstache" = "Ron Burgundy";
+"costume.type.fumanchu" = "Fu Man Chu";
+"costume.type.emo" = "Emo";
+"costume.type.shades" = "Shade";
+"costume.type.unibrow" = "Unibrow";
+"costume.type.eyepatch" = "Eye Patch";
+"costume.type.googlyeyes" = "Googly Eyes";
+"costume.type.santa" = "Santa";
+"costume.type.kanye" = "Kanye";
+"costume.type.miley" = "Miley";
+"costume.type.obama" = "Obama";
+"costume.type.emoji" = "Emoji";
+
+
+
+
+/* Send To */
+"new.group.button.text" = "New Group";
+"select.recipients.label.text" = "0 selected";
+"group.name.label.text" = "Group Name: ";
+"no.selected.friends.alert.title" = "Oops";
+"no.selected.friends.alert.body" = "Select some recipients for your message.";
+"send.to.tutorial.start.text" = "Select a contact or create a group with \"New Group\".\nThey don't need to have the app to receive your message.";
+"send.to.multi.phone.action.sheet.title" = "Select a phone number";
+"send.to.multi.email.action.sheet.title" = "Select an email";
+
+
+/* SMS */
+"create.convo.sms.text" = "hey i just sent you a video message on the app hollerback. it's like video texting. here's your invite to download it: %@";
+
+
+
+
+
+
+
+
+
+
+
+/* ASCII for logs */
+"ascii entered app" = "
+\n\n\n\n\n\n\n
+
+_______  __    _  _______  _______  ______    _______  ______
+|       ||  |  | ||       ||       ||    _ |  |       ||      |
+|    ___||   |_| ||_     _||    ___||   | ||  |    ___||  _    |
+|   |___ |       |  |   |  |   |___ |   |_||_ |   |___ | | |   |
+|    ___||  _    |  |   |  |    ___||    __  ||    ___|| |_|   |
+|   |___ | | |   |  |   |  |   |___ |   |  | ||   |___ |       |
+|_______||_|  |__|  |___|  |_______||___|  |_||_______||______|
+
+\n\n\n\n\n\n\n";
+"ascii exited app" = "
+\n\n\n\n\n\n\n
+
+_______  __   __  ___  _______  _______  ______
+|       ||  |_|  ||   ||       ||       ||      |
+|    ___||       ||   ||_     _||    ___||  _    |
+|   |___ |       ||   |  |   |  |   |___ | | |   |
+|    ___| |     | |   |  |   |  |    ___|| |_|   |
+|   |___ |   _   ||   |  |   |  |   |___ |       |
+|_______||__| |__||___|  |___|  |_______||______|
+
+
+\n\n\n\n\n\n\n";
+"ascii watch action" = "
+\n\n\n\n\n\n\n
+
+_     _  _______  _______  _______  __   __        _______  _______  _______  ___  _______  __    _
+| | _ | ||   _   ||       ||       ||  | |  |      |   _   ||       ||       ||   ||       ||  |  | |
+| || || ||  |_|  ||_     _||       ||  |_|  |      |  |_|  ||       ||_     _||   ||   _   ||   |_| |
+|       ||       |  |   |  |       ||       |      |       ||       |  |   |  |   ||  | |  ||       |
+|       ||       |  |   |  |      _||       |      |       ||      _|  |   |  |   ||  |_|  ||  _    |
+|   _   ||   _   |  |   |  |     |_ |   _   |      |   _   ||     |_   |   |  |   ||       || | |   |
+|__| |__||__| |__|  |___|  |_______||__| |__|      |__| |__||_______|  |___|  |___||_______||_|  |__|
+
+\n\n\n\n\n\n\n";
+"ascii camera action" = "
+\n\n\n\n\n\n\n
+
+_______  _______  __   __  _______  ______    _______        _______  _______  _______  ___  _______  __    _
+|       ||   _   ||  |_|  ||       ||    _ |  |   _   |      |   _   ||       ||       ||   ||       ||  |  | |
+|       ||  |_|  ||       ||    ___||   | ||  |  |_|  |      |  |_|  ||       ||_     _||   ||   _   ||   |_| |
+|       ||       ||       ||   |___ |   |_||_ |       |      |       ||       |  |   |  |   ||  | |  ||       |
+|      _||       ||       ||    ___||    __  ||       |      |       ||      _|  |   |  |   ||  |_|  ||  _    |
+|     |_ |   _   || ||_|| ||   |___ |   |  | ||   _   |      |   _   ||     |_   |   |  |   ||       || | |   |
+|_______||__| |__||_|   |_||_______||___|  |_||__| |__|      |__| |__||_______|  |___|  |___||_______||_|  |__|
+
+\n\n\n\n\n\n\n";
+"ascii saved video" = "
+\n\n\n\n\n\n\n
+
+_______  _______  __   __  _______  ______    __   __  ___  ______   _______  _______
+|       ||   _   ||  | |  ||       ||      |  |  | |  ||   ||      | |       ||       |
+|  _____||  |_|  ||  |_|  ||    ___||  _    | |  |_|  ||   ||  _    ||    ___||   _   |
+| |_____ |       ||       ||   |___ | | |   | |       ||   || | |   ||   |___ |  | |  |
+|_____  ||       ||       ||    ___|| |_|   | |       ||   || |_|   ||    ___||  |_|  |
+_____| ||   _   | |     | |   |___ |       |  |     | |   ||       ||   |___ |       |
+|_______||__| |__|  |___|  |_______||______|    |___|  |___||______| |_______||_______|
+
+\n\n\n\n\n\n\n";
+
+
+
+
+
+
+
+

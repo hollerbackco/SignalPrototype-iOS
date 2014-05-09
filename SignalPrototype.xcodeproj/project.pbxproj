@@ -51,6 +51,30 @@
 		0D5156DD191D2DFD00FD9378 /* SGUnaddedFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156BA191D2DFD00FD9378 /* SGUnaddedFriend.m */; };
 		0D5156DE191D2DFD00FD9378 /* SGUser+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156BC191D2DFD00FD9378 /* SGUser+Service.m */; };
 		0D5156DF191D2DFD00FD9378 /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156BE191D2DFD00FD9378 /* SGUser.m */; };
+		0D5156F5191D355D00FD9378 /* HBCountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156E2191D355D00FD9378 /* HBCountryPickerViewController.m */; };
+		0D5156F6191D355D00FD9378 /* HBCountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156E3191D355D00FD9378 /* HBCountryPickerViewController.xib */; };
+		0D5156F7191D355D00FD9378 /* HBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156E5191D355D00FD9378 /* HBLoginViewController.m */; };
+		0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156E7191D355D00FD9378 /* HBLoginViewController.xib */; };
+		0D5156FA191D355D00FD9378 /* HBRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156E9191D355D00FD9378 /* HBRegisterViewController.m */; };
+		0D5156FB191D355D00FD9378 /* HBRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156EA191D355D00FD9378 /* HBRegisterViewController.xib */; };
+		0D5156FC191D355D00FD9378 /* HBVerifyPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156EC191D355D00FD9378 /* HBVerifyPhoneViewController.m */; };
+		0D5156FD191D355D00FD9378 /* HBVerifyPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156ED191D355D00FD9378 /* HBVerifyPhoneViewController.xib */; };
+		0D5156FE191D355D00FD9378 /* SGConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */; };
+		0D5156FF191D355D00FD9378 /* SGConversationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */; };
+		0D515700191D355D00FD9378 /* SGCreateThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5156F3191D355D00FD9378 /* SGCreateThreadViewController.m */; };
+		0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5156F4191D355D00FD9378 /* SGCreateThreadViewController.xib */; };
+		0D515705191D359300FD9378 /* SGInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515703191D359300FD9378 /* SGInitialViewController.m */; };
+		0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D515704191D359300FD9378 /* SGInitialViewController.xib */; };
+		0D51570C191D3BA000FD9378 /* DiallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D515709191D3BA000FD9378 /* DiallingCodes.plist */; };
+		0D51570D191D3BA000FD9378 /* HMDiallingCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51570B191D3BA000FD9378 /* HMDiallingCode.m */; };
+		0D515710191D54B800FD9378 /* SGSmallModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51570F191D54B800FD9378 /* SGSmallModalView.m */; };
+		0D515715191D591500FD9378 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D515717191D591500FD9378 /* Localizable.strings */; };
+		0D51571A191D59ED00FD9378 /* HBWelcomeFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515719191D59ED00FD9378 /* HBWelcomeFlow.m */; };
+		0D51571F191D5A7A00FD9378 /* HBBaseWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51571C191D5A7A00FD9378 /* HBBaseWelcomeViewController.m */; };
+		0D515724191D60F000FD9378 /* HBWelcomeStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515722191D60F000FD9378 /* HBWelcomeStartViewController.m */; };
+		0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */; };
+		0D515728191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */; };
+		0D51572C191D634F00FD9378 /* HBPushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */; };
 		0D66D675191C7A6100510F35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D674191C7A6100510F35 /* Foundation.framework */; };
 		0D66D677191C7A6100510F35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D676191C7A6100510F35 /* CoreGraphics.framework */; };
 		0D66D679191C7A6100510F35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D678191C7A6100510F35 /* UIKit.framework */; };
@@ -73,10 +97,6 @@
 		0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */; };
 		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
 		0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C5191C7BB500510F35 /* JNLogger.m */; };
-		0D66D6CE191C7BC900510F35 /* SGConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */; };
-		0D66D6CF191C7BC900510F35 /* SGConversationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */; };
-		0D66D6D0191C7BC900510F35 /* SGCreateThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */; };
-		0D66D6D1191C7BC900510F35 /* SGCreateThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +196,44 @@
 		0D5156BC191D2DFD00FD9378 /* SGUser+Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SGUser+Service.m"; sourceTree = "<group>"; };
 		0D5156BD191D2DFD00FD9378 /* SGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUser.h; sourceTree = "<group>"; };
 		0D5156BE191D2DFD00FD9378 /* SGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUser.m; sourceTree = "<group>"; };
+		0D5156E1191D355D00FD9378 /* HBCountryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCountryPickerViewController.h; sourceTree = "<group>"; };
+		0D5156E2191D355D00FD9378 /* HBCountryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBCountryPickerViewController.m; sourceTree = "<group>"; };
+		0D5156E3191D355D00FD9378 /* HBCountryPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBCountryPickerViewController.xib; sourceTree = "<group>"; };
+		0D5156E4191D355D00FD9378 /* HBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBLoginViewController.h; sourceTree = "<group>"; };
+		0D5156E5191D355D00FD9378 /* HBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLoginViewController.m; sourceTree = "<group>"; };
+		0D5156E7191D355D00FD9378 /* HBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBLoginViewController.xib; sourceTree = "<group>"; };
+		0D5156E8191D355D00FD9378 /* HBRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRegisterViewController.h; sourceTree = "<group>"; };
+		0D5156E9191D355D00FD9378 /* HBRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBRegisterViewController.m; sourceTree = "<group>"; };
+		0D5156EA191D355D00FD9378 /* HBRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBRegisterViewController.xib; sourceTree = "<group>"; };
+		0D5156EB191D355D00FD9378 /* HBVerifyPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBVerifyPhoneViewController.h; sourceTree = "<group>"; };
+		0D5156EC191D355D00FD9378 /* HBVerifyPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBVerifyPhoneViewController.m; sourceTree = "<group>"; };
+		0D5156ED191D355D00FD9378 /* HBVerifyPhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBVerifyPhoneViewController.xib; sourceTree = "<group>"; };
+		0D5156EF191D355D00FD9378 /* SGConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConversationsViewController.h; sourceTree = "<group>"; };
+		0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConversationsViewController.m; sourceTree = "<group>"; };
+		0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGConversationsViewController.xib; sourceTree = "<group>"; };
+		0D5156F2191D355D00FD9378 /* SGCreateThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCreateThreadViewController.h; sourceTree = "<group>"; };
+		0D5156F3191D355D00FD9378 /* SGCreateThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCreateThreadViewController.m; sourceTree = "<group>"; };
+		0D5156F4191D355D00FD9378 /* SGCreateThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCreateThreadViewController.xib; sourceTree = "<group>"; };
+		0D515702191D359300FD9378 /* SGInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGInitialViewController.h; sourceTree = "<group>"; };
+		0D515703191D359300FD9378 /* SGInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGInitialViewController.m; sourceTree = "<group>"; };
+		0D515704191D359300FD9378 /* SGInitialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGInitialViewController.xib; sourceTree = "<group>"; };
+		0D515709191D3BA000FD9378 /* DiallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DiallingCodes.plist; sourceTree = "<group>"; };
+		0D51570A191D3BA000FD9378 /* HMDiallingCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiallingCode.h; sourceTree = "<group>"; };
+		0D51570B191D3BA000FD9378 /* HMDiallingCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDiallingCode.m; sourceTree = "<group>"; };
+		0D51570E191D54B800FD9378 /* SGSmallModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSmallModalView.h; path = Views/SGSmallModalView.h; sourceTree = "<group>"; };
+		0D51570F191D54B800FD9378 /* SGSmallModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSmallModalView.m; path = Views/SGSmallModalView.m; sourceTree = "<group>"; };
+		0D515716191D591500FD9378 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0D515718191D59ED00FD9378 /* HBWelcomeFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBWelcomeFlow.h; sourceTree = "<group>"; };
+		0D515719191D59ED00FD9378 /* HBWelcomeFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWelcomeFlow.m; sourceTree = "<group>"; };
+		0D51571B191D5A7A00FD9378 /* HBBaseWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseWelcomeViewController.h; sourceTree = "<group>"; };
+		0D51571C191D5A7A00FD9378 /* HBBaseWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseWelcomeViewController.m; sourceTree = "<group>"; };
+		0D515721191D60F000FD9378 /* HBWelcomeStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBWelcomeStartViewController.h; sourceTree = "<group>"; };
+		0D515722191D60F000FD9378 /* HBWelcomeStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWelcomeStartViewController.m; sourceTree = "<group>"; };
+		0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBWelcomeStartViewController.xib; sourceTree = "<group>"; };
+		0D515726191D61EF00FD9378 /* HBWelcomeAllowPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBWelcomeAllowPushViewController.h; sourceTree = "<group>"; };
+		0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWelcomeAllowPushViewController.m; sourceTree = "<group>"; };
+		0D51572A191D634F00FD9378 /* HBPushNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPushNotificationHandler.h; sourceTree = "<group>"; };
+		0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPushNotificationHandler.m; sourceTree = "<group>"; };
 		0D66D671191C7A6100510F35 /* SignalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D66D674191C7A6100510F35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D66D676191C7A6100510F35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,12 +270,6 @@
 		0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JNHelper.m"; sourceTree = "<group>"; };
 		0D66D6C4191C7BB500510F35 /* JNLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNLogger.h; sourceTree = "<group>"; };
 		0D66D6C5191C7BB500510F35 /* JNLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNLogger.m; sourceTree = "<group>"; };
-		0D66D6C8191C7BC900510F35 /* SGConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConversationsViewController.h; sourceTree = "<group>"; };
-		0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConversationsViewController.m; sourceTree = "<group>"; };
-		0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGConversationsViewController.xib; sourceTree = "<group>"; };
-		0D66D6CB191C7BC900510F35 /* SGCreateThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCreateThreadViewController.h; sourceTree = "<group>"; };
-		0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCreateThreadViewController.m; sourceTree = "<group>"; };
-		0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCreateThreadViewController.xib; sourceTree = "<group>"; };
 		B8295428D3884273B3B149DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DAEEE7DE87B34958B55F4214 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -270,6 +322,8 @@
 		0D515606191D274800FD9378 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D51570E191D54B800FD9378 /* SGSmallModalView.h */,
+				0D51570F191D54B800FD9378 /* SGSmallModalView.m */,
 				0D515607191D276F00FD9378 /* SGStatusBarNotification.h */,
 				0D515608191D276F00FD9378 /* SGStatusBarNotification.m */,
 			);
@@ -391,6 +445,90 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		0D5156E0191D355D00FD9378 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				0D515718191D59ED00FD9378 /* HBWelcomeFlow.h */,
+				0D515719191D59ED00FD9378 /* HBWelcomeFlow.m */,
+				0D51571B191D5A7A00FD9378 /* HBBaseWelcomeViewController.h */,
+				0D51571C191D5A7A00FD9378 /* HBBaseWelcomeViewController.m */,
+				0D515721191D60F000FD9378 /* HBWelcomeStartViewController.h */,
+				0D515722191D60F000FD9378 /* HBWelcomeStartViewController.m */,
+				0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */,
+				0D5156E1191D355D00FD9378 /* HBCountryPickerViewController.h */,
+				0D5156E2191D355D00FD9378 /* HBCountryPickerViewController.m */,
+				0D5156E3191D355D00FD9378 /* HBCountryPickerViewController.xib */,
+				0D5156E4191D355D00FD9378 /* HBLoginViewController.h */,
+				0D5156E5191D355D00FD9378 /* HBLoginViewController.m */,
+				0D5156E7191D355D00FD9378 /* HBLoginViewController.xib */,
+				0D5156E8191D355D00FD9378 /* HBRegisterViewController.h */,
+				0D5156E9191D355D00FD9378 /* HBRegisterViewController.m */,
+				0D5156EA191D355D00FD9378 /* HBRegisterViewController.xib */,
+				0D5156EB191D355D00FD9378 /* HBVerifyPhoneViewController.h */,
+				0D5156EC191D355D00FD9378 /* HBVerifyPhoneViewController.m */,
+				0D5156ED191D355D00FD9378 /* HBVerifyPhoneViewController.xib */,
+				0D515726191D61EF00FD9378 /* HBWelcomeAllowPushViewController.h */,
+				0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		0D5156EE191D355D00FD9378 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				0D5156EF191D355D00FD9378 /* SGConversationsViewController.h */,
+				0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */,
+				0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */,
+				0D5156F2191D355D00FD9378 /* SGCreateThreadViewController.h */,
+				0D5156F3191D355D00FD9378 /* SGCreateThreadViewController.m */,
+				0D5156F4191D355D00FD9378 /* SGCreateThreadViewController.xib */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		0D515707191D3BA000FD9378 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D515708191D3BA000FD9378 /* HMDiallingCode */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D515708191D3BA000FD9378 /* HMDiallingCode */ = {
+			isa = PBXGroup;
+			children = (
+				0D515709191D3BA000FD9378 /* DiallingCodes.plist */,
+				0D51570A191D3BA000FD9378 /* HMDiallingCode.h */,
+				0D51570B191D3BA000FD9378 /* HMDiallingCode.m */,
+			);
+			path = HMDiallingCode;
+			sourceTree = "<group>";
+		};
+		0D515711191D590600FD9378 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D515712191D590600FD9378 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0D515712191D590600FD9378 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0D515717191D591500FD9378 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		0D515729191D634F00FD9378 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0D51572A191D634F00FD9378 /* HBPushNotificationHandler.h */,
+				0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0D66D668191C7A6100510F35 = {
 			isa = PBXGroup;
 			children = (
@@ -434,12 +572,15 @@
 				0D515679191D2DFD00FD9378 /* Models */,
 				0D66D6C7191C7BC900510F35 /* Controllers */,
 				0D515606191D274800FD9378 /* Views */,
+				0D515729191D634F00FD9378 /* Managers */,
 				0D51560E191D29DA00FD9378 /* Metrics */,
+				0D515707191D3BA000FD9378 /* Helpers */,
 				0D51560A191D286900FD9378 /* JNManagers */,
 				0D66D6A3191C7B6E00510F35 /* JNHelpers */,
 				0D515602191D264D00FD9378 /* JNSimpleDataStore */,
 				0D66D6C3191C7BB500510F35 /* JNLogger */,
 				0D66D686191C7A6100510F35 /* Images.xcassets */,
+				0D515711191D590600FD9378 /* Resources */,
 				0D66D67B191C7A6100510F35 /* Supporting Files */,
 			);
 			path = SignalPrototype;
@@ -517,12 +658,11 @@
 		0D66D6C7191C7BC900510F35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0D66D6C8191C7BC900510F35 /* SGConversationsViewController.h */,
-				0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */,
-				0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */,
-				0D66D6CB191C7BC900510F35 /* SGCreateThreadViewController.h */,
-				0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */,
-				0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */,
+				0D5156E0191D355D00FD9378 /* Account */,
+				0D5156EE191D355D00FD9378 /* Conversations */,
+				0D515702191D359300FD9378 /* SGInitialViewController.h */,
+				0D515703191D359300FD9378 /* SGInitialViewController.m */,
+				0D515704191D359300FD9378 /* SGInitialViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -605,10 +745,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D66D6D1191C7BC900510F35 /* SGCreateThreadViewController.xib in Resources */,
+				0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */,
+				0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */,
+				0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */,
+				0D515715191D591500FD9378 /* Localizable.strings in Resources */,
+				0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */,
+				0D51570C191D3BA000FD9378 /* DiallingCodes.plist in Resources */,
 				0D66D67F191C7A6100510F35 /* InfoPlist.strings in Resources */,
-				0D66D6CF191C7BC900510F35 /* SGConversationsViewController.xib in Resources */,
+				0D5156FF191D355D00FD9378 /* SGConversationsViewController.xib in Resources */,
+				0D5156FD191D355D00FD9378 /* HBVerifyPhoneViewController.xib in Resources */,
+				0D5156F6191D355D00FD9378 /* HBCountryPickerViewController.xib in Resources */,
 				0D66D687191C7A6100510F35 /* Images.xcassets in Resources */,
+				0D5156FB191D355D00FD9378 /* HBRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,30 +811,38 @@
 				0D5156C8191D2DFD00FD9378 /* SGDatabase.m in Sources */,
 				0D5156C6191D2DFD00FD9378 /* SGConversation.m in Sources */,
 				0D66D6BA191C7B6E00510F35 /* JNIcon.m in Sources */,
+				0D51571A191D59ED00FD9378 /* HBWelcomeFlow.m in Sources */,
 				0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */,
 				0D5156DB191D2DFD00FD9378 /* SGRecentFriend.m in Sources */,
 				0D66D685191C7A6100510F35 /* SGAppDelegate.m in Sources */,
 				0D5156BF191D2DFD00FD9378 /* SGBuildContacts.m in Sources */,
+				0D5156F7191D355D00FD9378 /* HBLoginViewController.m in Sources */,
+				0D515710191D54B800FD9378 /* SGSmallModalView.m in Sources */,
 				0D5156D1191D2DFD00FD9378 /* SGSchemaAppVersion+Service.m in Sources */,
+				0D515724191D60F000FD9378 /* HBWelcomeStartViewController.m in Sources */,
 				0D5156CF191D2DFD00FD9378 /* SGPendingVideo+Service.m in Sources */,
 				0D5156CE191D2DFD00FD9378 /* SGMessageText.m in Sources */,
 				0D5156C0191D2DFD00FD9378 /* SGContact+Service.m in Sources */,
 				0D515609191D276F00FD9378 /* SGStatusBarNotification.m in Sources */,
 				0D5156D9191D2DFD00FD9378 /* SGFriend.m in Sources */,
-				0D66D6CE191C7BC900510F35 /* SGConversationsViewController.m in Sources */,
 				0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */,
 				0D5156D2191D2DFD00FD9378 /* SGSchemaAppVersion.m in Sources */,
 				0D5156D7191D2DFD00FD9378 /* SGVideodata.m in Sources */,
 				0D66D6BC191C7B6E00510F35 /* NSObject+JNHelper.m in Sources */,
 				0D66D6BE191C7B6E00510F35 /* UIFont+JNHelper.m in Sources */,
+				0D51572C191D634F00FD9378 /* HBPushNotificationHandler.m in Sources */,
 				0D5155FD191D24C400FD9378 /* JNFileUtils.m in Sources */,
 				0D5156C2191D2DFD00FD9378 /* SGMembership+Service.m in Sources */,
 				0D51560D191D286900FD9378 /* JNAppManager.m in Sources */,
+				0D5156F5191D355D00FD9378 /* HBCountryPickerViewController.m in Sources */,
+				0D5156FA191D355D00FD9378 /* HBRegisterViewController.m in Sources */,
 				0D5156D0191D2DFD00FD9378 /* SGPendingVideo.m in Sources */,
 				0D5156DA191D2DFD00FD9378 /* SGRecentFriend+Service.m in Sources */,
 				0D66D6BD191C7B6E00510F35 /* UIColor+JNHelper.m in Sources */,
 				0D5156D6191D2DFD00FD9378 /* SGVideo.m in Sources */,
 				0D5156C5191D2DFD00FD9378 /* SGConversation+Service.m in Sources */,
+				0D5156FC191D355D00FD9378 /* HBVerifyPhoneViewController.m in Sources */,
+				0D515728191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m in Sources */,
 				0D5156C9191D2DFD00FD9378 /* SGInvitee+Service.m in Sources */,
 				0D5156DF191D2DFD00FD9378 /* SGUser.m in Sources */,
 				0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */,
@@ -694,12 +850,14 @@
 				0D03F1B7191D1EF800AE0EF9 /* SGConstants.m in Sources */,
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
 				0D5156DE191D2DFD00FD9378 /* SGUser+Service.m in Sources */,
+				0D5156FE191D355D00FD9378 /* SGConversationsViewController.m in Sources */,
 				0D5156D8191D2DFD00FD9378 /* SGFriend+Service.m in Sources */,
 				0D5156C1191D2DFD00FD9378 /* SGContact.m in Sources */,
 				0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */,
 				0D5156DC191D2DFD00FD9378 /* SGUnaddedFriend+Service.m in Sources */,
 				0D515611191D29DA00FD9378 /* SGMetrics.m in Sources */,
 				0D5156D3191D2DFD00FD9378 /* SGSession.m in Sources */,
+				0D51571F191D5A7A00FD9378 /* HBBaseWelcomeViewController.m in Sources */,
 				0D5156C4191D2DFD00FD9378 /* SGBaseModel.m in Sources */,
 				0D5156C3191D2DFD00FD9378 /* SGMembership.m in Sources */,
 				0D03F140191D1DFA00AE0EF9 /* SGAPIClient.m in Sources */,
@@ -707,15 +865,17 @@
 				0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */,
 				0D515605191D264D00FD9378 /* JNSimpleDataStore.m in Sources */,
 				0D5156CD191D2DFD00FD9378 /* SGMessageText+Service.m in Sources */,
+				0D515705191D359300FD9378 /* SGInitialViewController.m in Sources */,
+				0D515700191D355D00FD9378 /* SGCreateThreadViewController.m in Sources */,
 				0D5156D4191D2DFD00FD9378 /* SGSync.m in Sources */,
 				0D5156DD191D2DFD00FD9378 /* SGUnaddedFriend.m in Sources */,
 				0D5156CC191D2DFD00FD9378 /* SGMessage.m in Sources */,
-				0D66D6D0191C7BC900510F35 /* SGCreateThreadViewController.m in Sources */,
 				0D5156CA191D2DFD00FD9378 /* SGInvitee.m in Sources */,
 				0D5156D5191D2DFD00FD9378 /* SGVideo+Service.m in Sources */,
 				0D03F1B4191D1EF100AE0EF9 /* SGServerConstants.m in Sources */,
 				0D66D6B9191C7B6E00510F35 /* JNAlertView.m in Sources */,
 				0D5156CB191D2DFD00FD9378 /* SGMessage+Service.m in Sources */,
+				0D51570D191D3BA000FD9378 /* HMDiallingCode.m in Sources */,
 				0D03F1BA191D1F0800AE0EF9 /* CGUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,6 +899,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0D515717191D591500FD9378 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D515716191D591500FD9378 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0D66D67D191C7A6100510F35 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
