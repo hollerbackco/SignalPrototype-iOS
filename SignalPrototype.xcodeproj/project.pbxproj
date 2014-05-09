@@ -717,6 +717,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Signal;
 				TargetAttributes = {
+					0D66D670191C7A6100510F35 = {
+						DevelopmentTeam = HX4KGNZD2W;
+					};
 					0D66D68B191C7A6100510F35 = {
 						TestTargetID = 0D66D670191C7A6100510F35;
 					};
@@ -1002,10 +1005,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Will Dennis (28S6U8566M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Dennis (28S6U8566M)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SignalPrototype/SignalPrototype-Prefix.pch";
 				INFOPLIST_FILE = "SignalPrototype/SignalPrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9D10B8CC-637F-4713-B796-E985FBD4C6B1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1016,10 +1022,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: moziy, inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: moziy, inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SignalPrototype/SignalPrototype-Prefix.pch";
 				INFOPLIST_FILE = "SignalPrototype/SignalPrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D22A7829-0AF5-4B6D-BC74-AE1D16D633AA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
