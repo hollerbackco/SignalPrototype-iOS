@@ -59,6 +59,26 @@
 
 - (void)setupConversationsRootViewController
 {
+    JNLog();
+    // register for push
+    [HBPushNotificationHandler registerForPushNotificationsCompleted:^{
+        
+        [self showConversationsViewController];
+        
+    } denied:^{
+        
+        [JNAlertView
+         showWithTitle:JNLocalizedString(@"welcome.allow.push.denied.alert.title")
+         body:JNLocalizedString(@"welcome.allow.push.denied.alert.body")
+         okAction:^{
+             [self showConversationsViewController];
+         }];
+        
+    }];
+}
+
+- (void)showConversationsViewController
+{
     if (!self.createThreadViewController) {
         self.createThreadViewController = [[SGCreateThreadViewController alloc] initWithNib];
     }
