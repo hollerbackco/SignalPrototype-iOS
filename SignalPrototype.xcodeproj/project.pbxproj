@@ -29,6 +29,10 @@
 		0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B3191C7B6E00510F35 /* UIView+JNHelper.m */; };
 		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
 		0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C5191C7BB500510F35 /* JNLogger.m */; };
+		0D66D6CE191C7BC900510F35 /* SGConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */; };
+		0D66D6CF191C7BC900510F35 /* SGConversationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */; };
+		0D66D6D0191C7BC900510F35 /* SGCreateThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */; };
+		0D66D6D1191C7BC900510F35 /* SGCreateThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,12 @@
 		0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JNHelper.m"; sourceTree = "<group>"; };
 		0D66D6C4191C7BB500510F35 /* JNLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNLogger.h; sourceTree = "<group>"; };
 		0D66D6C5191C7BB500510F35 /* JNLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNLogger.m; sourceTree = "<group>"; };
+		0D66D6C8191C7BC900510F35 /* SGConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConversationsViewController.h; sourceTree = "<group>"; };
+		0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConversationsViewController.m; sourceTree = "<group>"; };
+		0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGConversationsViewController.xib; sourceTree = "<group>"; };
+		0D66D6CB191C7BC900510F35 /* SGCreateThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCreateThreadViewController.h; sourceTree = "<group>"; };
+		0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCreateThreadViewController.m; sourceTree = "<group>"; };
+		0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCreateThreadViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,7 @@
 			children = (
 				0D66D683191C7A6100510F35 /* SGAppDelegate.h */,
 				0D66D684191C7A6100510F35 /* SGAppDelegate.m */,
+				0D66D6C7191C7BC900510F35 /* Controllers */,
 				0D66D6A3191C7B6E00510F35 /* JNHelpers */,
 				0D66D6C3191C7BB500510F35 /* JNLogger */,
 				0D66D686191C7A6100510F35 /* Images.xcassets */,
@@ -208,6 +219,19 @@
 				0D66D6C5191C7BB500510F35 /* JNLogger.m */,
 			);
 			path = JNLogger;
+			sourceTree = "<group>";
+		};
+		0D66D6C7191C7BC900510F35 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D66D6C8191C7BC900510F35 /* SGConversationsViewController.h */,
+				0D66D6C9191C7BC900510F35 /* SGConversationsViewController.m */,
+				0D66D6CA191C7BC900510F35 /* SGConversationsViewController.xib */,
+				0D66D6CB191C7BC900510F35 /* SGCreateThreadViewController.h */,
+				0D66D6CC191C7BC900510F35 /* SGCreateThreadViewController.m */,
+				0D66D6CD191C7BC900510F35 /* SGCreateThreadViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D66D6D1191C7BC900510F35 /* SGCreateThreadViewController.xib in Resources */,
 				0D66D67F191C7A6100510F35 /* InfoPlist.strings in Resources */,
+				0D66D6CF191C7BC900510F35 /* SGConversationsViewController.xib in Resources */,
 				0D66D687191C7A6100510F35 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +335,7 @@
 				0D66D6BA191C7B6E00510F35 /* JNIcon.m in Sources */,
 				0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */,
 				0D66D685191C7A6100510F35 /* SGAppDelegate.m in Sources */,
+				0D66D6CE191C7BC900510F35 /* SGConversationsViewController.m in Sources */,
 				0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */,
 				0D66D6BC191C7B6E00510F35 /* NSObject+JNHelper.m in Sources */,
 				0D66D6BE191C7B6E00510F35 /* UIFont+JNHelper.m in Sources */,
@@ -317,6 +344,7 @@
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
 				0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */,
 				0D66D6C0191C7B6E00510F35 /* UIView+JNHelper.m in Sources */,
+				0D66D6D0191C7BC900510F35 /* SGCreateThreadViewController.m in Sources */,
 				0D66D6B9191C7B6E00510F35 /* JNAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

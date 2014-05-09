@@ -7,6 +7,14 @@
 //
 
 #import "SGAppDelegate.h"
+#import "SGCreateThreadViewController.h"
+
+@interface SGAppDelegate ()
+
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) SGCreateThreadViewController *createThreadViewController;
+
+@end
 
 @implementation SGAppDelegate
 
@@ -16,7 +24,23 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self setupRootViewController];
+    
     return YES;
+}
+
+- (void)setupRootViewController
+{
+    if (!self.createThreadViewController) {
+        self.createThreadViewController = [[SGCreateThreadViewController alloc] initWithNib];
+    }
+    
+    if (!self.navigationController) {
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.createThreadViewController];
+    }
+    
+    self.window.rootViewController = self.navigationController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
