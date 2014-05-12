@@ -13,6 +13,12 @@
 		0D03F1B7191D1EF800AE0EF9 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1B6191D1EF800AE0EF9 /* SGConstants.m */; };
 		0D03F1BA191D1F0800AE0EF9 /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1B9191D1F0700AE0EF9 /* CGUtils.m */; };
 		0D03F1BD191D1F0D00AE0EF9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1BC191D1F0D00AE0EF9 /* NSString+MD5.m */; };
+		0D5080DD19205EA200816D19 /* SGCreateConversationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080DC19205EA200816D19 /* SGCreateConversationContext.m */; };
+		0D5080E41920719B00816D19 /* SGHollerbackContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080DF1920719B00816D19 /* SGHollerbackContactsViewController.m */; };
+		0D5080E51920719B00816D19 /* SGHollerbackContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5080E01920719B00816D19 /* SGHollerbackContactsViewController.xib */; };
+		0D5080E61920719B00816D19 /* SGSendToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080E21920719B00816D19 /* SGSendToViewController.m */; };
+		0D5080E71920719B00816D19 /* SGSendToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5080E31920719B00816D19 /* SGSendToViewController.xib */; };
+		0D5080EA192071F900816D19 /* JNViewController+MultiValueSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080E9192071F900816D19 /* JNViewController+MultiValueSelector.m */; };
 		0D5155FD191D24C400FD9378 /* JNFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5155FC191D24C400FD9378 /* JNFileUtils.m */; };
 		0D515605191D264D00FD9378 /* JNSimpleDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515604191D264D00FD9378 /* JNSimpleDataStore.m */; };
 		0D515609191D276F00FD9378 /* SGStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515608191D276F00FD9378 /* SGStatusBarNotification.m */; };
@@ -98,6 +104,8 @@
 		0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6B5191C7B6E00510F35 /* UIViewController+JNHelper.m */; };
 		0D66D6C6191C7BB500510F35 /* JNLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D66D6C5191C7BB500510F35 /* JNLogger.m */; };
 		0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC855AB191D9A2200396425 /* HBBaseWelcomeViewController.xib */; };
+		0DC855B719204B0300396425 /* SGAbstractContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC855B319204B0300396425 /* SGAbstractContactsViewController.m */; };
+		0DC855BC19204C1D00396425 /* SGMultiSelectContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC855BB19204C1D00396425 /* SGMultiSelectContactsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +129,16 @@
 		0D03F1B9191D1F0700AE0EF9 /* CGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGUtils.m; sourceTree = "<group>"; };
 		0D03F1BB191D1F0D00AE0EF9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		0D03F1BC191D1F0D00AE0EF9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		0D5080DB19205EA200816D19 /* SGCreateConversationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCreateConversationContext.h; sourceTree = "<group>"; };
+		0D5080DC19205EA200816D19 /* SGCreateConversationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCreateConversationContext.m; sourceTree = "<group>"; };
+		0D5080DE1920719B00816D19 /* SGHollerbackContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHollerbackContactsViewController.h; sourceTree = "<group>"; };
+		0D5080DF1920719B00816D19 /* SGHollerbackContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHollerbackContactsViewController.m; sourceTree = "<group>"; };
+		0D5080E01920719B00816D19 /* SGHollerbackContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGHollerbackContactsViewController.xib; sourceTree = "<group>"; };
+		0D5080E11920719B00816D19 /* SGSendToViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSendToViewController.h; sourceTree = "<group>"; };
+		0D5080E21920719B00816D19 /* SGSendToViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSendToViewController.m; sourceTree = "<group>"; };
+		0D5080E31920719B00816D19 /* SGSendToViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGSendToViewController.xib; sourceTree = "<group>"; };
+		0D5080E8192071F900816D19 /* JNViewController+MultiValueSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JNViewController+MultiValueSelector.h"; sourceTree = "<group>"; };
+		0D5080E9192071F900816D19 /* JNViewController+MultiValueSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JNViewController+MultiValueSelector.m"; sourceTree = "<group>"; };
 		0D5155FB191D24C400FD9378 /* JNFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNFileUtils.h; sourceTree = "<group>"; };
 		0D5155FC191D24C400FD9378 /* JNFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNFileUtils.m; sourceTree = "<group>"; };
 		0D515603191D264D00FD9378 /* JNSimpleDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNSimpleDataStore.h; sourceTree = "<group>"; };
@@ -272,6 +290,10 @@
 		0D66D6C4191C7BB500510F35 /* JNLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNLogger.h; sourceTree = "<group>"; };
 		0D66D6C5191C7BB500510F35 /* JNLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNLogger.m; sourceTree = "<group>"; };
 		0DC855AB191D9A2200396425 /* HBBaseWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBBaseWelcomeViewController.xib; sourceTree = "<group>"; };
+		0DC855B219204B0300396425 /* SGAbstractContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAbstractContactsViewController.h; sourceTree = "<group>"; };
+		0DC855B319204B0300396425 /* SGAbstractContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAbstractContactsViewController.m; sourceTree = "<group>"; };
+		0DC855BA19204C1D00396425 /* SGMultiSelectContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMultiSelectContactsCell.h; sourceTree = "<group>"; };
+		0DC855BB19204C1D00396425 /* SGMultiSelectContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMultiSelectContactsCell.m; sourceTree = "<group>"; };
 		B8295428D3884273B3B149DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DAEEE7DE87B34958B55F4214 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -479,12 +501,26 @@
 		0D5156EE191D355D00FD9378 /* Conversations */ = {
 			isa = PBXGroup;
 			children = (
-				0D5156EF191D355D00FD9378 /* SGConversationsViewController.h */,
-				0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */,
-				0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */,
 				0D5156F2191D355D00FD9378 /* SGCreateThreadViewController.h */,
 				0D5156F3191D355D00FD9378 /* SGCreateThreadViewController.m */,
 				0D5156F4191D355D00FD9378 /* SGCreateThreadViewController.xib */,
+				0D5156EF191D355D00FD9378 /* SGConversationsViewController.h */,
+				0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */,
+				0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */,
+				0DC855B219204B0300396425 /* SGAbstractContactsViewController.h */,
+				0DC855B319204B0300396425 /* SGAbstractContactsViewController.m */,
+				0D5080DB19205EA200816D19 /* SGCreateConversationContext.h */,
+				0D5080DC19205EA200816D19 /* SGCreateConversationContext.m */,
+				0D5080DE1920719B00816D19 /* SGHollerbackContactsViewController.h */,
+				0D5080DF1920719B00816D19 /* SGHollerbackContactsViewController.m */,
+				0D5080E01920719B00816D19 /* SGHollerbackContactsViewController.xib */,
+				0D5080E8192071F900816D19 /* JNViewController+MultiValueSelector.h */,
+				0D5080E9192071F900816D19 /* JNViewController+MultiValueSelector.m */,
+				0D5080E11920719B00816D19 /* SGSendToViewController.h */,
+				0D5080E21920719B00816D19 /* SGSendToViewController.m */,
+				0D5080E31920719B00816D19 /* SGSendToViewController.xib */,
+				0DC855BA19204C1D00396425 /* SGMultiSelectContactsCell.h */,
+				0DC855BB19204C1D00396425 /* SGMultiSelectContactsCell.m */,
 			);
 			path = Conversations;
 			sourceTree = "<group>";
@@ -752,12 +788,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */,
+				0D5080E71920719B00816D19 /* SGSendToViewController.xib in Resources */,
 				0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */,
 				0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */,
 				0D515715191D591500FD9378 /* Localizable.strings in Resources */,
 				0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */,
 				0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */,
 				0D51570C191D3BA000FD9378 /* DiallingCodes.plist in Resources */,
+				0D5080E51920719B00816D19 /* SGHollerbackContactsViewController.xib in Resources */,
 				0D66D67F191C7A6100510F35 /* InfoPlist.strings in Resources */,
 				0D5156FF191D355D00FD9378 /* SGConversationsViewController.xib in Resources */,
 				0D5156FD191D355D00FD9378 /* HBVerifyPhoneViewController.xib in Resources */,
@@ -817,6 +855,7 @@
 			files = (
 				0D5156C8191D2DFD00FD9378 /* SGDatabase.m in Sources */,
 				0D5156C6191D2DFD00FD9378 /* SGConversation.m in Sources */,
+				0DC855BC19204C1D00396425 /* SGMultiSelectContactsCell.m in Sources */,
 				0D66D6BA191C7B6E00510F35 /* JNIcon.m in Sources */,
 				0D51571A191D59ED00FD9378 /* HBWelcomeFlow.m in Sources */,
 				0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */,
@@ -824,12 +863,15 @@
 				0D66D685191C7A6100510F35 /* SGAppDelegate.m in Sources */,
 				0D5156BF191D2DFD00FD9378 /* SGBuildContacts.m in Sources */,
 				0D5156F7191D355D00FD9378 /* HBLoginViewController.m in Sources */,
+				0D5080DD19205EA200816D19 /* SGCreateConversationContext.m in Sources */,
 				0D515710191D54B800FD9378 /* SGSmallModalView.m in Sources */,
 				0D5156D1191D2DFD00FD9378 /* SGSchemaAppVersion+Service.m in Sources */,
 				0D515724191D60F000FD9378 /* HBWelcomeStartViewController.m in Sources */,
 				0D5156CF191D2DFD00FD9378 /* SGPendingVideo+Service.m in Sources */,
 				0D5156CE191D2DFD00FD9378 /* SGMessageText.m in Sources */,
 				0D5156C0191D2DFD00FD9378 /* SGContact+Service.m in Sources */,
+				0D5080E61920719B00816D19 /* SGSendToViewController.m in Sources */,
+				0DC855B719204B0300396425 /* SGAbstractContactsViewController.m in Sources */,
 				0D515609191D276F00FD9378 /* SGStatusBarNotification.m in Sources */,
 				0D5156D9191D2DFD00FD9378 /* SGFriend.m in Sources */,
 				0D66D6BF191C7B6E00510F35 /* UIImage+JNHelper.m in Sources */,
@@ -855,6 +897,7 @@
 				0D66D6C1191C7B6E00510F35 /* UIViewController+JNHelper.m in Sources */,
 				0D5156C7191D2DFD00FD9378 /* SGConversationObject.m in Sources */,
 				0D03F1B7191D1EF800AE0EF9 /* SGConstants.m in Sources */,
+				0D5080E41920719B00816D19 /* SGHollerbackContactsViewController.m in Sources */,
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
 				0D5156DE191D2DFD00FD9378 /* SGUser+Service.m in Sources */,
 				0D5156FE191D355D00FD9378 /* SGConversationsViewController.m in Sources */,
@@ -874,6 +917,7 @@
 				0D5156CD191D2DFD00FD9378 /* SGMessageText+Service.m in Sources */,
 				0D515705191D359300FD9378 /* SGInitialViewController.m in Sources */,
 				0D515700191D355D00FD9378 /* SGCreateThreadViewController.m in Sources */,
+				0D5080EA192071F900816D19 /* JNViewController+MultiValueSelector.m in Sources */,
 				0D5156D4191D2DFD00FD9378 /* SGSync.m in Sources */,
 				0D5156DD191D2DFD00FD9378 /* SGUnaddedFriend.m in Sources */,
 				0D5156CC191D2DFD00FD9378 /* SGMessage.m in Sources */,
@@ -1013,6 +1057,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Dennis (28S6U8566M)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SignalPrototype/SignalPrototype-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = "SignalPrototype/SignalPrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9D10B8CC-637F-4713-B796-E985FBD4C6B1";
