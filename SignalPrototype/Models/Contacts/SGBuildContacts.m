@@ -319,7 +319,9 @@ static BOOL _isCancelled = NO;
                      }
                      
                      [subscriber sendCompleted];
-                     return [RACDisposable disposableWithBlock:nil];
+                     return [RACDisposable disposableWithBlock:^{
+                         ;
+                     }];
                  }];
              }]] subscribeCompleted:^{
                  //                 JNLog(@"completed");
