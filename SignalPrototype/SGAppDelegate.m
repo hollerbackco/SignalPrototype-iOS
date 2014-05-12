@@ -45,6 +45,8 @@
     return YES;
 }
 
+#pragma mark - Root View Controller
+
 - (void)setupRootViewController
 {
     if ([[SGSession sharedInstance] isLoggedIn]) {
@@ -88,6 +90,14 @@
     }
     
     self.window.rootViewController = self.conversationsNavigationController;
+}
+
+#pragma mark - Logger
+
+- (void)setupLogger
+{
+    // configure logger
+    [[JNLogger sharedInstance] configureFileLogger];
 }
 
 #pragma mark - Welcome Flow
@@ -147,7 +157,7 @@
 
 - (void)checkForPushRegistration
 {
-    if (![HBPushNotificationHandler didAttemptToRegisterPushNotifications]) {
+    if ([HBPushNotificationHandler didAttemptToRegisterPushNotifications]) {
         JNLogPrimitive([HBPushNotificationHandler didAttemptToRegisterPushNotifications]);
         [[HBPushNotificationHandler sharedInstance] startAllowPushFlowInViewController:self.createThreadViewController];
     }

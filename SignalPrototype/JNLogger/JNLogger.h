@@ -31,11 +31,11 @@
  */
 #ifdef DEBUG
 #define JNLog(__FORMAT__, ...) { \
-DDLogCVerbose((@"%s [%d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); \
+NSLog((@"%s [%d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); \
 }
 #else
 #define JNLog(__FORMAT__, ...) { \
-DDLogCVerbose((@"%s [%d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); \
+NSLog((@"%s [%d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__); \
 }
 #endif
 
@@ -72,6 +72,10 @@ DDLogCVerbose((@"" __FORMAT__), ##__VA_ARGS__);
 
 + (void)logException:(NSException*)exception;
 + (void)logExceptionWithName:(NSString*)name reason:(NSString*)reason error:(NSError*)error;
+
+#pragma mark -
+
+- (void)configureFileLogger;
 
 @end
 

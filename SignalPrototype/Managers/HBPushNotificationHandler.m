@@ -47,14 +47,11 @@ static HBPushNotificationHandler *sharedInstance;
 
 + (void)registerForPushNotificationsCompleted:(void(^)())completed denied:(void(^)())denied
 {
-    JNLog();
     UIRemoteNotificationType remoteNotificationsTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert;
-    
+    JNLogPrimitive([self.class didAttemptToRegisterPushNotifications]);
     if ([self.class didAttemptToRegisterPushNotifications]) {
         // have previously attempted to ask use for push, see if they're granted or denied
         UIRemoteNotificationType enabledRemoteNotificationTypes = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-        JNLogPrimitive(enabledRemoteNotificationTypes);
-        JNLogPrimitive(remoteNotificationsTypes);
         if (enabledRemoteNotificationTypes != remoteNotificationsTypes) {
             if (denied) {
                 denied();
