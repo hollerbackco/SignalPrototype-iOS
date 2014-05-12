@@ -897,29 +897,6 @@
     }];
 }
 
-#pragma mark - Check contacts
-
-- (void)checkContacts:(NSDictionary*)parameters
-              success:(SGAPIClientSuccessBlock)success
-                 fail:(SGAPIClientFailBlock)fail
-{
-    [self POST:@"contacts/check" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject respondsToSelector:@selector(objectForKey:)]) {
-            id data = [responseObject objectForKey:@"data"];
-            if ([NSDictionary isNotNullDictionary:data]) {
-                success(data);
-            } else {
-                success(responseObject);
-            }
-        } else {
-            success(responseObject);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [JNLogger logExceptionWithName:THIS_METHOD reason:@"failed request" error:error];
-        fail(JNLocalizedString(@"failed.request.check.contacts.alert.body"));
-    }];
-}
-
 #pragma mark Video - mark as watched
 
 - (void)markVideoAsWatched:(NSString*)guid

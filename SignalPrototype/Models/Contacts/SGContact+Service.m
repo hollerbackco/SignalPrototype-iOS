@@ -195,18 +195,24 @@
     if (accessToken) {
         [mutableParameters setValue:accessToken forKey:kSGAccessTokenKey];
     }
-    [[SGAPIClient sharedClient] checkContacts:mutableParameters success:^(id object) {
+    
+    [self.class checkContacts:mutableParameters success:^(id object) {
         // success
         if ([object isKindOfClass:[NSDictionary class]]) {
             id data = [object objectForKey:@"data"];
-            if ([data isKindOfClass:[NSArray class]]) {
+            if ([NSArray isNotEmptyArray:[NSArray class]]) {
                 success(data);
-                return;
+            } else {
+                success(@[]);
             }
+        } else if ([NSArray isNotEmptyArray:object]) {
+            success(object);
+        } else {
+            success(object);
         }
-        success(object);
-        
+
     } fail:^(NSString *errorMessage) {
+        
         failed(errorMessage);
     }];
 }
@@ -382,6 +388,34 @@
         return [[NSSet setWithArray:invites] allObjects];
     }
     return nil;
+}
+
+#pragma mark - API 
+
+#pragma mark Check contacts
+
++ (void)checkContacts:(NSDictionary*)parameters
+              success:(SGAPIClientSuccessBlock)success
+                 fail:(SGAPIClientFailBlock)fail
+{
+    [[SGAPIClient sharedClient] POST:@"contacts/check" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        JNLogObject(responseObject);
+        if ([responseObject respondsToSelector:@selector(objectForKey:)]) {
+            id data = [responseObject objectForKey:@"data"];
+            if ([NSDictionary isNotNullDictionary:data]) {
+                success(data);
+            } else if ([NSArray isNotEmptyArray:data]) {
+                success(data);
+            } else {
+                success(responseObject);
+            }
+        } else {
+            success(responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [JNLogger logExceptionWithName:THIS_METHOD reason:@"failed request" error:error];
+        fail(JNLocalizedString(@"failed.request.check.contacts.alert.body"));
+    }];
 }
 
 @end
