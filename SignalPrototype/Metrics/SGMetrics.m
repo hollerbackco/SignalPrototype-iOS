@@ -78,6 +78,8 @@
 
 + (void)setupMetrics
 {
+    return;
+    
     // Keen IO
     [KeenClient disableGeoLocation];
     [KeenClient sharedClient].globalPropertiesDictionary = @{@"platform": @"ios"};
@@ -100,12 +102,16 @@
 
 + (void)addEvent:(NSDictionary*)event toEventCollection:eventCollection
 {
+    return;
+    
 //    JNLog(@"%@\n%@", eventCollection, event);
     [[KeenClient sharedClient] addEvent:event toEventCollection:eventCollection error:nil];
 }
 
 + (void)uploadEventMetricsWithApplication:(UIApplication*)application
 {
+    return;
+    
     UIBackgroundTaskIdentifier taskId = [application beginBackgroundTaskWithExpirationHandler:^(void) {
         JNLog(@"Background task is being expired.");
     }];
