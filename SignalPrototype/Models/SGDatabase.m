@@ -120,7 +120,8 @@
         @"unread_count integer,"
         @"is_deleted bool,"
         @"color_code integer,"
-        @"background_image_number integer"
+        @"background_image_number integer,"
+        @"sender_name text"
         @")";
 	[[self getDBQueue] inDatabase:^(FMDatabase *db) {
 		[db beginTransaction];

@@ -23,7 +23,8 @@ static int color = 1;
              @"unreadCount": @"unread_count",
              @"isDeleted": @"is_deleted",
              @"colorCode": @"color_code",
-             @"backgroundImageNumber": @"background_image_number"};
+             @"backgroundImageNumber": @"background_image_number",
+             @"senderName": @"sender_name"};
 }
 
 + (NSValueTransformer *)lastMessageAtJSONTransformer

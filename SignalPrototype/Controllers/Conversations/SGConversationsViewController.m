@@ -211,7 +211,7 @@ void runOnConversationListQueue(void (^block)(void))
     
     SGConversation *conversation = [self.conversations objectAtIndex:indexPath.row];
     
-    cell.senderName = @"test";
+    cell.senderName = conversation.senderName;
     cell.sentAt = [MHPrettyDate prettyDateFromDate:conversation.lastMessageAt withFormat:MHPrettyDateFormatTodayTimeOnly];
     cell.messageText = conversation.name;
     

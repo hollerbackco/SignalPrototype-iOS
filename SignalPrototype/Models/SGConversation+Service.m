@@ -195,8 +195,9 @@
              @"unread_count, "
              @"is_deleted, "
              @"color_code, "
-             @"background_image_number) "
-             @"VALUES (?,?,?,?,?,?,?,?,?)",
+             @"background_image_number,"
+             @"sender_name) "
+             @"VALUES (?,?,?,?,?,?,?,?,?,?)",
              self.identifier,
              [[NSDate dateFormatter] stringFromDate:self.lastMessageAt],
              self.name,
@@ -205,7 +206,8 @@
              self.unreadCount,
              self.isDeleted,
              self.colorCode,
-             self.backgroundImageNumber]) {
+             self.backgroundImageNumber,
+             self.senderName]) {
             [JNLogger logExceptionWithName:THIS_METHOD reason:nil error:db.lastError];
         }
         

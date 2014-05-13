@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *videos;
 @property (nonatomic, strong) NSNumber *isDeleted;
 @property (nonatomic, strong) NSNumber *backgroundImageNumber;
+@property (nonatomic, copy) NSString *senderName;
 
 + (int)colorKey;
 
