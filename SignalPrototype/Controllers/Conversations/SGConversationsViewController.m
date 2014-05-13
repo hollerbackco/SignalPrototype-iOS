@@ -12,6 +12,7 @@
 #import "JNIcon.h"
 
 #import "SGConversationsViewController.h"
+#import "SGThreadViewController.h"
 #import "SGConversationsTableViewCell.h"
 #import "SGConversation+Service.h"
 #import "SGSession.h"
@@ -229,5 +230,24 @@ void runOnConversationListQueue(void (^block)(void))
     
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SGConversation *conversation = self.conversations[indexPath.row];
+    
+    SGThreadViewController *threadViewController = [self setupThreadViewControllerWithConversation:conversation];
+    
+    [self.navigationController pushViewController:threadViewController animated:YES];
+}
+
+- (SGThreadViewController*)setupThreadViewControllerWithConversation:(SGConversation*)conversation
+{
+    SGThreadViewController *threadViewController = [[SGThreadViewController alloc] initWithNib];
+    threadViewController.conversation = conversation;
+    return threadViewController;
+}
+
 
 @end

@@ -9,6 +9,7 @@
 #import <RHAddressBook.h>
 
 #import "SGContact.h"
+#import "SGAPIClient.h"
 
 @interface SGContact (Service)
 
@@ -48,6 +49,13 @@
 + (NSArray*)buildInvitePhoneNumbersFromFriends:(NSArray*)friends;
 
 + (NSArray*)buildInviteContactsFromFriends:(NSArray*)friends;
+
+#pragma mark - Check contacts
+
+// NOTE: check/contacts can be called with access_token and will return different results. It is up to the caller to provide the access_token
++ (void)checkContacts:(NSDictionary*)parameters
+              success:(SGAPIClientSuccessBlock)success
+                 fail:(SGAPIClientFailBlock)fail;
 
 @end
 

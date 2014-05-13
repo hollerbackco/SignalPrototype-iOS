@@ -83,6 +83,11 @@
 		0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */; };
 		0D515728191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */; };
 		0D51572C191D634F00FD9378 /* HBPushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */; };
+		0D5BCD261921AFAF0058D7F0 /* SGThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */; };
+		0D5BCD271921AFAF0058D7F0 /* SGThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */; };
+		0D5BCD2B1921B4210058D7F0 /* SGThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BCD291921B4210058D7F0 /* SGThreadTableViewCell.m */; };
+		0D5BCD2C1921B4210058D7F0 /* SGThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5BCD2A1921B4210058D7F0 /* SGThreadTableViewCell.xib */; };
+		0D5BCD2F1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BCD2E1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m */; };
 		0D66D675191C7A6100510F35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D674191C7A6100510F35 /* Foundation.framework */; };
 		0D66D677191C7A6100510F35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D676191C7A6100510F35 /* CoreGraphics.framework */; };
 		0D66D679191C7A6100510F35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D66D678191C7A6100510F35 /* UIKit.framework */; };
@@ -258,6 +263,14 @@
 		0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWelcomeAllowPushViewController.m; sourceTree = "<group>"; };
 		0D51572A191D634F00FD9378 /* HBPushNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPushNotificationHandler.h; sourceTree = "<group>"; };
 		0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPushNotificationHandler.m; sourceTree = "<group>"; };
+		0D5BCD231921AFAF0058D7F0 /* SGThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThreadViewController.h; sourceTree = "<group>"; };
+		0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThreadViewController.m; sourceTree = "<group>"; };
+		0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThreadViewController.xib; sourceTree = "<group>"; };
+		0D5BCD281921B4210058D7F0 /* SGThreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThreadTableViewCell.h; sourceTree = "<group>"; };
+		0D5BCD291921B4210058D7F0 /* SGThreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThreadTableViewCell.m; sourceTree = "<group>"; };
+		0D5BCD2A1921B4210058D7F0 /* SGThreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThreadTableViewCell.xib; sourceTree = "<group>"; };
+		0D5BCD2D1921B8DB0058D7F0 /* SGThreadViewController+Pagination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SGThreadViewController+Pagination.h"; sourceTree = "<group>"; };
+		0D5BCD2E1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SGThreadViewController+Pagination.m"; sourceTree = "<group>"; };
 		0D66D671191C7A6100510F35 /* SignalPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignalPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D66D674191C7A6100510F35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D66D676191C7A6100510F35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -529,6 +542,14 @@
 				0D5080E31920719B00816D19 /* SGSendToViewController.xib */,
 				0DC855BA19204C1D00396425 /* SGMultiSelectContactsCell.h */,
 				0DC855BB19204C1D00396425 /* SGMultiSelectContactsCell.m */,
+				0D5BCD231921AFAF0058D7F0 /* SGThreadViewController.h */,
+				0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */,
+				0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */,
+				0D5BCD2D1921B8DB0058D7F0 /* SGThreadViewController+Pagination.h */,
+				0D5BCD2E1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m */,
+				0D5BCD281921B4210058D7F0 /* SGThreadTableViewCell.h */,
+				0D5BCD291921B4210058D7F0 /* SGThreadTableViewCell.m */,
+				0D5BCD2A1921B4210058D7F0 /* SGThreadTableViewCell.xib */,
 			);
 			path = Conversations;
 			sourceTree = "<group>";
@@ -798,6 +819,7 @@
 				0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */,
 				0D5080E71920719B00816D19 /* SGSendToViewController.xib in Resources */,
 				0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */,
+				0D5BCD271921AFAF0058D7F0 /* SGThreadViewController.xib in Resources */,
 				0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */,
 				0D515715191D591500FD9378 /* Localizable.strings in Resources */,
 				0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */,
@@ -809,6 +831,7 @@
 				0D5156FF191D355D00FD9378 /* SGConversationsViewController.xib in Resources */,
 				0D5156FD191D355D00FD9378 /* HBVerifyPhoneViewController.xib in Resources */,
 				0D5156F6191D355D00FD9378 /* HBCountryPickerViewController.xib in Resources */,
+				0D5BCD2C1921B4210058D7F0 /* SGThreadTableViewCell.xib in Resources */,
 				0D66D687191C7A6100510F35 /* Images.xcassets in Resources */,
 				0D5156FB191D355D00FD9378 /* HBRegisterViewController.xib in Resources */,
 			);
@@ -891,6 +914,7 @@
 				0D66D6BE191C7B6E00510F35 /* UIFont+JNHelper.m in Sources */,
 				0D51572C191D634F00FD9378 /* HBPushNotificationHandler.m in Sources */,
 				0D5155FD191D24C400FD9378 /* JNFileUtils.m in Sources */,
+				0D5BCD2B1921B4210058D7F0 /* SGThreadTableViewCell.m in Sources */,
 				0D5156C2191D2DFD00FD9378 /* SGMembership+Service.m in Sources */,
 				0D51560D191D286900FD9378 /* JNAppManager.m in Sources */,
 				0D5156F5191D355D00FD9378 /* HBCountryPickerViewController.m in Sources */,
@@ -901,6 +925,7 @@
 				0D5156D6191D2DFD00FD9378 /* SGVideo.m in Sources */,
 				0D5156C5191D2DFD00FD9378 /* SGConversation+Service.m in Sources */,
 				0D5156FC191D355D00FD9378 /* HBVerifyPhoneViewController.m in Sources */,
+				0D5BCD261921AFAF0058D7F0 /* SGThreadViewController.m in Sources */,
 				0D515728191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m in Sources */,
 				0D5156C9191D2DFD00FD9378 /* SGInvitee+Service.m in Sources */,
 				0D5156DF191D2DFD00FD9378 /* SGUser.m in Sources */,
@@ -927,6 +952,7 @@
 				0D5156CD191D2DFD00FD9378 /* SGMessageText+Service.m in Sources */,
 				0D515705191D359300FD9378 /* SGInitialViewController.m in Sources */,
 				0D515700191D355D00FD9378 /* SGCreateThreadViewController.m in Sources */,
+				0D5BCD2F1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m in Sources */,
 				0D5080EA192071F900816D19 /* JNViewController+MultiValueSelector.m in Sources */,
 				0D5156D4191D2DFD00FD9378 /* SGSync.m in Sources */,
 				0D5156DD191D2DFD00FD9378 /* SGUnaddedFriend.m in Sources */,

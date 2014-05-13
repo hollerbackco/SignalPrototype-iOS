@@ -12,7 +12,6 @@
 
 #import "SGContact+Service.h"
 #import "JNSimpleDataStore.h"
-#import "SGAPIClient.h"
 #import "SGUser+Service.h"
 
 @implementation SGContact (Service)

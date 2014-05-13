@@ -1,29 +1,24 @@
 //
-//  SGConversationsTableViewCell.m
+//  SGThreadTableViewCell.m
 //  SignalPrototype
 //
 //  Created by Joe Nguyen on 12/05/2014.
 //  Copyright (c) 2014 Signal. All rights reserved.
 //
 
-#import "UIView+JNHelper.h"
 #import "UIFont+JNHelper.h"
-#import "UIColor+JNHelper.h"
 
-#import "JNIcon.h"
+#import "SGThreadTableViewCell.h"
 
-#import "SGConversationsTableViewCell.h"
+@interface SGThreadTableViewCell ()
 
-@interface SGConversationsTableViewCell ()
-
-@property (weak, nonatomic) IBOutlet UIButton *followButton;
 @property (weak, nonatomic) IBOutlet UILabel *senderNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sentAtLabel;
 @property (weak, nonatomic) IBOutlet UILabel *messageTextLabel;
 
 @end
 
-@implementation SGConversationsTableViewCell
+@implementation SGThreadTableViewCell
 
 - (void)awakeFromNib
 {
@@ -37,8 +32,6 @@
 
 - (void)resetCellValues
 {
-    [self.followButton setTitle:nil forState:UIControlStateNormal];
-    [self.followButton setAttributedTitle:[JNIcon plusOutlineIconWithSize:30.0 color:JNBlackTextColor] forState:UIControlStateNormal];
     self.senderNameLabel.text = nil;
     self.sentAtLabel.text = nil;
     self.messageTextLabel.text = nil;
@@ -60,8 +53,5 @@
 {
     self.messageTextLabel.text = messageText;
 }
-
-#pragma mark - 
-
 
 @end
