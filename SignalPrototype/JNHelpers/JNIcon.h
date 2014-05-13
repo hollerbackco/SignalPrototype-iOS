@@ -25,6 +25,7 @@
 + (UIImage*)peopleImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (UIImage*)lockedImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (UIImage*)inboxImageIconWithSize:(CGFloat)size color:(UIColor*)color;
++ (UIImage*)composeImageIconWithSize:(CGFloat)size color:(UIColor*)color;
 
 #pragma mark - NSAttributedString
 
@@ -43,6 +44,7 @@
 + (NSAttributedString*)eyeIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (NSAttributedString*)trashOutlineIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (NSAttributedString*)plusIconWithSize:(CGFloat)size color:(UIColor*)color;
++ (NSAttributedString*)plusOutlineIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (NSAttributedString*)personStalkerIconWithSize:(CGFloat)size color:(UIColor*)color;
 + (NSAttributedString*)earthIconWithSize:(CGFloat)size color:(UIColor*)color;
 

@@ -131,6 +131,14 @@
     return [icon imageWithSize:CGSizeMake(size, size)];
 }
 
++ (UIImage*)composeImageIconWithSize:(CGFloat)size color:(UIColor*)color
+{
+    FAKIonIcons *icon = [FAKIonIcons composeIconWithSize:size];
+    if (color) {
+        [icon addAttribute:NSForegroundColorAttributeName value:color];
+    }
+    return [icon imageWithSize:CGSizeMake(size, size)];
+}
 
 #pragma mark - NSAttributedString
 
@@ -263,6 +271,15 @@
 + (NSAttributedString*)plusIconWithSize:(CGFloat)size color:(UIColor*)color
 {
     FAKIonIcons *icon = [FAKIonIcons ios7PlusEmptyIconWithSize:size];
+    if (color) {
+        [icon addAttribute:NSForegroundColorAttributeName value:color];
+    }
+    return [icon attributedString];
+}
+
++ (NSAttributedString*)plusOutlineIconWithSize:(CGFloat)size color:(UIColor*)color
+{
+    FAKIonIcons *icon = [FAKIonIcons ios7PlusOutlineIconWithSize:size];
     if (color) {
         [icon addAttribute:NSForegroundColorAttributeName value:color];
     }

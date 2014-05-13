@@ -19,6 +19,8 @@
 		0D5080E61920719B00816D19 /* SGSendToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080E21920719B00816D19 /* SGSendToViewController.m */; };
 		0D5080E71920719B00816D19 /* SGSendToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5080E31920719B00816D19 /* SGSendToViewController.xib */; };
 		0D5080EA192071F900816D19 /* JNViewController+MultiValueSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080E9192071F900816D19 /* JNViewController+MultiValueSelector.m */; };
+		0D5080EE19213A7400816D19 /* SGConversationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080EC19213A7400816D19 /* SGConversationsTableViewCell.m */; };
+		0D5080EF19213A7400816D19 /* SGConversationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5080ED19213A7400816D19 /* SGConversationsTableViewCell.xib */; };
 		0D5155FD191D24C400FD9378 /* JNFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5155FC191D24C400FD9378 /* JNFileUtils.m */; };
 		0D515605191D264D00FD9378 /* JNSimpleDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515604191D264D00FD9378 /* JNSimpleDataStore.m */; };
 		0D515609191D276F00FD9378 /* SGStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515608191D276F00FD9378 /* SGStatusBarNotification.m */; };
@@ -139,6 +141,9 @@
 		0D5080E31920719B00816D19 /* SGSendToViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGSendToViewController.xib; sourceTree = "<group>"; };
 		0D5080E8192071F900816D19 /* JNViewController+MultiValueSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JNViewController+MultiValueSelector.h"; sourceTree = "<group>"; };
 		0D5080E9192071F900816D19 /* JNViewController+MultiValueSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JNViewController+MultiValueSelector.m"; sourceTree = "<group>"; };
+		0D5080EB19213A7400816D19 /* SGConversationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConversationsTableViewCell.h; sourceTree = "<group>"; };
+		0D5080EC19213A7400816D19 /* SGConversationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConversationsTableViewCell.m; sourceTree = "<group>"; };
+		0D5080ED19213A7400816D19 /* SGConversationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGConversationsTableViewCell.xib; sourceTree = "<group>"; };
 		0D5155FB191D24C400FD9378 /* JNFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNFileUtils.h; sourceTree = "<group>"; };
 		0D5155FC191D24C400FD9378 /* JNFileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNFileUtils.m; sourceTree = "<group>"; };
 		0D515603191D264D00FD9378 /* JNSimpleDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNSimpleDataStore.h; sourceTree = "<group>"; };
@@ -507,6 +512,9 @@
 				0D5156EF191D355D00FD9378 /* SGConversationsViewController.h */,
 				0D5156F0191D355D00FD9378 /* SGConversationsViewController.m */,
 				0D5156F1191D355D00FD9378 /* SGConversationsViewController.xib */,
+				0D5080EB19213A7400816D19 /* SGConversationsTableViewCell.h */,
+				0D5080EC19213A7400816D19 /* SGConversationsTableViewCell.m */,
+				0D5080ED19213A7400816D19 /* SGConversationsTableViewCell.xib */,
 				0DC855B219204B0300396425 /* SGAbstractContactsViewController.h */,
 				0DC855B319204B0300396425 /* SGAbstractContactsViewController.m */,
 				0D5080DB19205EA200816D19 /* SGCreateConversationContext.h */,
@@ -795,6 +803,7 @@
 				0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */,
 				0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */,
 				0D51570C191D3BA000FD9378 /* DiallingCodes.plist in Resources */,
+				0D5080EF19213A7400816D19 /* SGConversationsTableViewCell.xib in Resources */,
 				0D5080E51920719B00816D19 /* SGHollerbackContactsViewController.xib in Resources */,
 				0D66D67F191C7A6100510F35 /* InfoPlist.strings in Resources */,
 				0D5156FF191D355D00FD9378 /* SGConversationsViewController.xib in Resources */,
@@ -861,6 +870,7 @@
 				0D66D6BB191C7B6E00510F35 /* JNViewController.m in Sources */,
 				0D5156DB191D2DFD00FD9378 /* SGRecentFriend.m in Sources */,
 				0D66D685191C7A6100510F35 /* SGAppDelegate.m in Sources */,
+				0D5080EE19213A7400816D19 /* SGConversationsTableViewCell.m in Sources */,
 				0D5156BF191D2DFD00FD9378 /* SGBuildContacts.m in Sources */,
 				0D5156F7191D355D00FD9378 /* HBLoginViewController.m in Sources */,
 				0D5080DD19205EA200816D19 /* SGCreateConversationContext.m in Sources */,
