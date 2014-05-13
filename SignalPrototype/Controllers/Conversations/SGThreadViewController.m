@@ -65,6 +65,8 @@ void runOnThreadViewQueue(void (^block)(void))
 
 - (void)viewDidLoad
 {
+    self.title = self.conversation.senderName;
+    
     [super viewDidLoad];
     
     [self setupViews];
