@@ -8,6 +8,8 @@
 
 #import <MHPrettyDate.h>
 
+#import "JNIcon.h"
+
 #import "SGThreadViewController.h"
 #import "SGThreadTableViewCell.h"
 #import "SGMessage+Service.h"
@@ -85,7 +87,16 @@ void runOnThreadViewQueue(void (^block)(void))
 
 - (void)setupViews
 {
-    JNLog();
+    self.messageTextView.text = self.conversation.name;
+    
+    [self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
+    
+    [self.cameraButton setTitle:nil forState:UIControlStateNormal];
+    [self.cameraButton setImage:[JNIcon cameraImageIconWithSize:30.0 color:JNGrayColor] forState:UIControlStateNormal];
+    
+    [self.sendButton setTitle:@"Send" forState:UIControlStateNormal];
+    
+    self.messageTextField.placeholder = @"Message";
 }
 
 static NSString *CellIdentifier = @"SGThreadTableViewCell";
