@@ -13,7 +13,7 @@
 #import "SGDatabase.h"
 #import "SGBaseModel.h"
 
-@interface SGBaseModel : MTLModel
+@interface SGBaseModel : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSDate *createdAt;

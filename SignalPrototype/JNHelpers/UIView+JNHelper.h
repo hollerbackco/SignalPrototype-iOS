@@ -16,11 +16,12 @@ typedef void(^HBViewComplete)(BOOL finished);
 
 + (void)hideAndRemoveView:(UIView*)view;
 
++ (void)animateWithBlock:(void (^)(void))animations;
 
 /*
  helper for animating views with constraints
  e.g. 
- 
+
  */
 + (void)animateLayoutConstraintsWithContainerView:(UIView*)containerView
                                         childView:(UIView*)childView

@@ -12,8 +12,9 @@
 
 #import "SGThreadViewController.h"
 #import "SGThreadTableViewCell.h"
-#import "SGMessage+Service.h"
 #import "SGMessageText+Service.h"
+#import "SGMessage+Service.h"
+#import "SGUser+Service.h"
 
 dispatch_queue_t threadViewQueue() {
     static dispatch_once_t queueCreationGuard;
@@ -29,7 +30,7 @@ void runOnThreadViewQueue(void (^block)(void))
     dispatch_async(threadViewQueue(), block);
 }
 
-@interface SGThreadViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SGThreadViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @end
 
@@ -97,6 +98,7 @@ void runOnThreadViewQueue(void (^block)(void))
     [self.sendButton setTitle:@"Send" forState:UIControlStateNormal];
     
     self.messageTextField.placeholder = @"Message";
+    self.messageTextField.delegate = self;
 }
 
 static NSString *CellIdentifier = @"SGThreadTableViewCell";
@@ -140,6 +142,16 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 
 - (IBAction)sendAction:(id)sender
 {
+    NSString *messageText = self.messageTextField.text;
+    
+    if ([NSString isNotEmptyString:messageText]) {
+        [self performMessageTextSend:messageText completed:^{
+            ;
+        }];
+    }
+    
+    self.messageTextField.text = nil;
+    [self.messageTextField resignFirstResponder];
 }
 
 #pragma mark - UITableViewDataSource
@@ -148,10 +160,6 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 {
     return self.messages.count;
 }
-
-static NSString *CenterCellIdentifier = @"HBThreadContentCell";
-static NSString *LeftCellIdentifier = @"HBThreadContentLeftCell";
-static NSString *RightCellIdentifier = @"HBThreadContentRightCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -187,7 +195,7 @@ static NSString *RightCellIdentifier = @"HBThreadContentRightCell";
     cell.senderName = message.senderName;
     cell.sentAt = [MHPrettyDate prettyDateFromDate:message.sentAt withFormat:MHPrettyDateFormatTodayTimeOnly];
     
-    SGMessageText *messageText = message.messageText;
+    SGMessageText *messageText = [message getMessageText];
     if (messageText) {
         cell.messageText = messageText.text;
     }
@@ -199,7 +207,7 @@ static NSString *RightCellIdentifier = @"HBThreadContentRightCell";
 {
 //    NSArray *messageGroup = self.groupedMessages[indexPath.row];
 //    // calculate cell height for text + video
-//    CGFloat heightForRow = [HBThreadContentCell calculateCellHeightForMessageGroup:messageGroup];
+//    CGFloat heightForRow = [SGThreadContentCell calculateCellHeightForMessageGroup:messageGroup];
 //    return heightForRow;
     
     return kSGThreadTableViewCellMinHeight;
@@ -240,9 +248,12 @@ static NSString *RightCellIdentifier = @"HBThreadContentRightCell";
 //                 
 //                 if (!self.threadCameraViewController.isFakeThread) {
 //                     // log metric
-//                     [HBSession didOnboardingActivity:kHBOnboardingPreRecord
-//                                           parameters:@{kHBOnboardingSourceParamKey:kHBOnboardingSourceParamExistingConvoKey}];
+//                     [SGSession didOnboardingActivity:kSGOnboardingPreRecord
+//                                           parameters:@{kSGOnboardingSourceParamKey:kSGOnboardingSourceParamExistingConvoKey}];
 //                 }
+                 
+                 
+                 self.messages = [[self sortMessages:messages ascending:YES] mutableCopy];
                  
                  runOnMainQueue(^{
                      // reload table view
@@ -349,7 +360,90 @@ static NSString *RightCellIdentifier = @"HBThreadContentRightCell";
     self.tableView.delegate = self;
     [self.tableView reloadData];
     
-//    [self.tableView scrollRectToVisible:CGRectMake(0.0, 0.0, 1.0, 1.0) animated:YES];
+    [self.tableView scrollRectToVisible:CGRectMake(0.0, self.tableView.contentSize.height - 1.0, 1.0, 1.0) animated:animated];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [UIView animateWithBlock:^{
+        self.view.frame = CGRectSetY(self.view.frame, -kSGKeyboardHeight + kSGDefaultNavigationAndStatusBarHeight);
+    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView animateWithBlock:^{
+        self.view.frame = CGRectSetY(self.view.frame, kSGDefaultNavigationAndStatusBarHeight);
+    }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return YES;
+}
+
+#pragma mark - Message Text Send
+
+- (void)performMessageTextSend:(NSString*)text completed:(void(^)())completed
+{
+    // create SGMessage
+    NSNumber *conversationID = self.conversation.identifier;
+    NSDate *sentAt = [NSDate date];
+    NSNumber *senderID = [SGUser getCurrentUserId];
+    NSString *senderName = [SGUser getCurrentUsername];
+    NSString *messageTextGUID = [SGBaseModel generateGUID];
+    NSNumber *isRead = @(YES);
+    
+    // create message and save locally
+    SGMessage *message = [SGMessage new];
+    message.contentGUID = messageTextGUID;
+    message.messageType = kSGMessageTypeText;
+    message.conversationID = conversationID;
+    message.sentAt = sentAt;
+    message.senderID = senderID;
+    message.senderName = senderName;
+    message.isRead = isRead;
+    [message save];
+    
+    // create SGMessageText
+    SGMessageText *messageText = [SGMessageText new];
+    messageText.guid = messageTextGUID;
+    messageText.text = text;
+    [messageText save];
+    
+    [self didFinishMessageTextSave:message];
+    
+    // perform remote save in background
+    runOnAsyncDefaultQueue(^{
+        [SGMessageText
+         createWithText:text
+         guid:messageTextGUID
+         conversationID:conversationID
+         completed:^(SGMessageText *messageText) {
+             JNLogObject(messageText);
+         }
+         failed:^(NSString *errorMessage) {
+             JNLogObject(errorMessage);
+             runOnMainQueue(^{
+                 [self displayError:errorMessage];
+             });
+         }];
+    });
+}
+
+- (void)didFinishMessageTextSave:(SGMessage*)message
+{
+    JNLog();
+    runOnThreadViewQueue(^{
+        
+        [self.messages addObject:message];
+        
+        runOnMainQueue(^{
+            [self reloadTableViewAndScrollToBottomAnimated:YES];
+        });
+    });
 }
 
 @end

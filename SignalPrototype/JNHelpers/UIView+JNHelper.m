@@ -24,6 +24,11 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
     }];
 }
 
++ (void)animateWithBlock:(void (^)(void))animations
+{
+    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:animations];
+}
+
 + (void)animateLayoutConstraintsWithContainerView:(UIView*)containerView
                                         childView:(UIView*)childView
                                          duration:(NSTimeInterval)duration

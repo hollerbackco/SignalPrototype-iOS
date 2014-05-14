@@ -11,7 +11,7 @@
 
 @interface SGMessageText ()
 
-@property (nonatomic, strong) SGMessage *message;
+//@property (nonatomic, strong) SGMessage *message;
 
 @end
 
