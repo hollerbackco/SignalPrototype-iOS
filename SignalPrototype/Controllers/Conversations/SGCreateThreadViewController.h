@@ -10,4 +10,6 @@
 
 @interface SGCreateThreadViewController : JNViewController
 
+- (void)showKeyboard;
+
 @end

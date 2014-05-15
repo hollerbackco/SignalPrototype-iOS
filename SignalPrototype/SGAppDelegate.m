@@ -159,7 +159,9 @@
 {
     if ([HBPushNotificationHandler didAttemptToRegisterPushNotifications]) {
         JNLogPrimitive([HBPushNotificationHandler didAttemptToRegisterPushNotifications]);
-        [[HBPushNotificationHandler sharedInstance] startAllowPushFlowInViewController:self.createThreadViewController];
+        [[HBPushNotificationHandler sharedInstance] startAllowPushFlowInViewController:self.createThreadViewController completed:^{
+            [self.createThreadViewController showKeyboard];
+        }];
     }
 }
 

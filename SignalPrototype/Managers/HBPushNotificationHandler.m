@@ -134,7 +134,7 @@ static HBPushNotificationHandler *sharedInstance;
     [UIApplication sharedApplication].applicationIconBadgeNumber = badgeNumber;
 }
 
-- (void)startAllowPushFlowInViewController:(UIViewController*)viewController
+- (void)startAllowPushFlowInViewController:(UIViewController*)viewController completed:(void(^)())completed
 {
     JNLog();
     runOnMainQueue(^{
@@ -146,19 +146,19 @@ static HBPushNotificationHandler *sharedInstance;
         @weakify(viewController);
         welcomeAllowPushViewController.finishedViewController = ^() {
             [HBPushNotificationHandler registerForPushNotificationsCompleted:^{
-                [self finishedRegisteringForPushInViewController:viewController_weak_];
+                [self finishedRegisteringForPushInViewController:viewController_weak_ completed:completed];
             } denied:^{
-                [self finishedRegisteringForPushInViewController:viewController_weak_];
+                [self finishedRegisteringForPushInViewController:viewController_weak_ completed:completed];
             }];
         };
     });
 }
 
-- (void)finishedRegisteringForPushInViewController:(UIViewController*)viewController
+- (void)finishedRegisteringForPushInViewController:(UIViewController*)viewController completed:(void(^)())completed
 {
     JNLog();
     runOnMainQueue(^{
-        [viewController dismissViewControllerAnimated:YES completion:nil];
+        [viewController dismissViewControllerAnimated:YES completion:completed];
     });
 }
 

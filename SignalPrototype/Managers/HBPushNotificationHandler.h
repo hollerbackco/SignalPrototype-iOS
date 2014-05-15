@@ -33,6 +33,6 @@
 
 - (void)handlePushPayload:(NSDictionary*)payload;
 
-- (void)startAllowPushFlowInViewController:(UIViewController*)viewController;
+- (void)startAllowPushFlowInViewController:(UIViewController*)viewController completed:(void(^)())completed;
 
 @end

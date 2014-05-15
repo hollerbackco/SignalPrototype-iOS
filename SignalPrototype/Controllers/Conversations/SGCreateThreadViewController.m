@@ -89,7 +89,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self.messageTextField becomeFirstResponder];
+    [self showKeyboard];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -99,6 +99,11 @@
     if (self.sendToViewController) {
         self.sendToViewController = nil;
     }
+}
+
+- (void)showKeyboard
+{
+    [self.messageTextField becomeFirstResponder];
 }
 
 #pragma mark - Actions
