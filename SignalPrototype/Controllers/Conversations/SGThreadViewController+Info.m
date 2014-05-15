@@ -43,6 +43,9 @@ void runOnThreadInfoViewQueue(void (^block)(void))
     
     self.recipientsTitleLabel.text = nil;
     self.recipientsTextView.text = nil;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideInfoView)];
+    [self.infoOverlayView addGestureRecognizer:tapGesture];
 }
 
 - (void)toggleInfoView

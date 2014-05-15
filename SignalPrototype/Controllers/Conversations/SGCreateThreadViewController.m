@@ -89,6 +89,8 @@
 {
     [super viewWillAppear:animated];
     
+    [self resetFields];
+    
     [self showKeyboard];
 }
 
