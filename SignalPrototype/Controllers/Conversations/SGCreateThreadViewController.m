@@ -31,6 +31,15 @@
 
 @implementation SGCreateThreadViewController
 
+#pragma mark -
+
+- (void)resetFields
+{
+    self.messageTextField.text = nil;
+}
+
+#pragma mark - Views
+
 - (void)viewDidLoad
 {
     JNLog();
@@ -238,7 +247,30 @@
 {
     JNLogObject(conversation);
     
+    [self resetSendToViewController];
+    
+    [self resetFields];
+    
     [self pushToConversationsViewController];
+}
+
+- (void)resetSendToViewController
+{
+    NSMutableArray *navigationViewControllers = [self.navigationController.viewControllers mutableCopy];
+    
+    __block NSUInteger indexToRemove = NSNotFound;
+    
+    [navigationViewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[SGSendToViewController class]]) {
+            indexToRemove = idx;
+        }
+    }];
+    
+    [navigationViewControllers removeObjectAtIndex:indexToRemove];
+    
+    self.navigationController.viewControllers = navigationViewControllers;
+    
+    self.sendToViewController = nil;
 }
 
 - (void)failedToCreateConversation:(NSString*)errorMessage
