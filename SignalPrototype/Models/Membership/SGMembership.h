@@ -11,4 +11,6 @@
 
 @interface SGMembership : SGUser
 
+@property (nonatomic, strong) NSNumber *following;
+
 @end

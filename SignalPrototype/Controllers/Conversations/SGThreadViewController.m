@@ -90,8 +90,6 @@ void runOnThreadViewQueue(void (^block)(void))
 {
     self.messageTextView.text = self.conversation.name;
     
-    [self.infoButton setTitle:@"not following" forState:UIControlStateNormal];
-    
     [self.cameraButton setTitle:nil forState:UIControlStateNormal];
     [self.cameraButton setImage:[JNIcon cameraImageIconWithSize:30.0 color:JNGrayColor] forState:UIControlStateNormal];
     
@@ -100,14 +98,7 @@ void runOnThreadViewQueue(void (^block)(void))
     self.messageTextField.placeholder = @"Message";
     self.messageTextField.delegate = self;
     
-    // Overlay view
-    self.infoOverlayView.alpha = 0.0;
-    self.infoOverlayView.backgroundColor = [JNBlackColor colorWithAlphaComponent:0.5];
-    [self.followButton setTitle:nil forState:UIControlStateNormal];
-    self.followersTitleLabel.text = nil;
-    self.followersTextView.text = nil;
-    self.recipientsTitleLabel.text = nil;
-    self.recipientsTextView.text = nil;
+    [self setupInfoView];
 }
 
 static NSString *CellIdentifier = @"SGThreadTableViewCell";
@@ -464,31 +455,6 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
             [self reloadTableViewAndScrollToBottomAnimated:YES];
         });
     });
-}
-
-#pragma mark - Info 
-
-- (void)toggleInfoView
-{
-    if (self.infoOverlayView.alpha == 0.0) {
-        [self showInfoView];
-    } else {
-        [self hideInfoView];
-    }
-}
-
-- (void)showInfoView
-{
-    [UIView animateWithBlock:^{
-        self.infoOverlayView.alpha = 1.0;
-    }];
-}
-
-- (void)hideInfoView
-{
-    [UIView animateWithBlock:^{
-        self.infoOverlayView.alpha = 0.0;
-    }];
 }
 
 @end

@@ -10,4 +10,16 @@
 
 @implementation SGMembership
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    NSDictionary *superKeyPaths = [super JSONKeyPathsByPropertyKey];
+    NSDictionary *selfKeyPaths = @{
+                                   @"following": @"following"
+                                   };
+    NSMutableDictionary *keyPaths = [NSMutableDictionary dictionaryWithCapacity:superKeyPaths.count + selfKeyPaths.count];
+    [keyPaths addEntriesFromDictionary:superKeyPaths];
+    [keyPaths addEntriesFromDictionary:selfKeyPaths];
+    return keyPaths;
+}
+
 @end

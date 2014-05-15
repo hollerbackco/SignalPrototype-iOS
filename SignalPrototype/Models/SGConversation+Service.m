@@ -196,8 +196,9 @@
              @"is_deleted, "
              @"color_code, "
              @"background_image_number,"
-             @"sender_name) "
-             @"VALUES (?,?,?,?,?,?,?,?,?,?)",
+             @"sender_name,"
+             @"following) "
+             @"VALUES (?,?,?,?,?,?,?,?,?,?,?)",
              self.identifier,
              [[NSDate dateFormatter] stringFromDate:self.lastMessageAt],
              self.name,
@@ -207,7 +208,8 @@
              self.isDeleted,
              self.colorCode,
              self.backgroundImageNumber,
-             self.senderName]) {
+             self.senderName,
+             self.following]) {
             [JNLogger logExceptionWithName:THIS_METHOD reason:nil error:db.lastError];
         }
         

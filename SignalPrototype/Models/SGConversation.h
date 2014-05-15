@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSNumber *isDeleted;
 @property (nonatomic, strong) NSNumber *backgroundImageNumber;
 @property (nonatomic, copy) NSString *senderName;
+@property (nonatomic, strong) NSNumber *following;
 
 + (int)colorKey;
 

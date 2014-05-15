@@ -24,7 +24,8 @@ static int color = 1;
              @"isDeleted": @"is_deleted",
              @"colorCode": @"color_code",
              @"backgroundImageNumber": @"background_image_number",
-             @"senderName": @"sender_name"};
+             @"senderName": @"sender_name",
+             @"following": @"following"};
 }
 
 + (NSValueTransformer *)lastMessageAtJSONTransformer

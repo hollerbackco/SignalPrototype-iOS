@@ -13,6 +13,8 @@
 		0D03F1B7191D1EF800AE0EF9 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1B6191D1EF800AE0EF9 /* SGConstants.m */; };
 		0D03F1BA191D1F0800AE0EF9 /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1B9191D1F0700AE0EF9 /* CGUtils.m */; };
 		0D03F1BD191D1F0D00AE0EF9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03F1BC191D1F0D00AE0EF9 /* NSString+MD5.m */; };
+		0D1D80B1192558B300A1B469 /* SGThreadViewController+Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D80B0192558B300A1B469 /* SGThreadViewController+Info.m */; };
+		0D1D80B41925630B00A1B469 /* UIColor+SGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D80B31925630B00A1B469 /* UIColor+SGHelper.m */; };
 		0D5080DD19205EA200816D19 /* SGCreateConversationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080DC19205EA200816D19 /* SGCreateConversationContext.m */; };
 		0D5080E41920719B00816D19 /* SGHollerbackContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5080DF1920719B00816D19 /* SGHollerbackContactsViewController.m */; };
 		0D5080E51920719B00816D19 /* SGHollerbackContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5080E01920719B00816D19 /* SGHollerbackContactsViewController.xib */; };
@@ -136,6 +138,10 @@
 		0D03F1B9191D1F0700AE0EF9 /* CGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGUtils.m; sourceTree = "<group>"; };
 		0D03F1BB191D1F0D00AE0EF9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		0D03F1BC191D1F0D00AE0EF9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		0D1D80AF192558B300A1B469 /* SGThreadViewController+Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SGThreadViewController+Info.h"; sourceTree = "<group>"; };
+		0D1D80B0192558B300A1B469 /* SGThreadViewController+Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SGThreadViewController+Info.m"; sourceTree = "<group>"; };
+		0D1D80B21925630B00A1B469 /* UIColor+SGHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SGHelper.h"; sourceTree = "<group>"; };
+		0D1D80B31925630B00A1B469 /* UIColor+SGHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SGHelper.m"; sourceTree = "<group>"; };
 		0D5080DB19205EA200816D19 /* SGCreateConversationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCreateConversationContext.h; sourceTree = "<group>"; };
 		0D5080DC19205EA200816D19 /* SGCreateConversationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCreateConversationContext.m; sourceTree = "<group>"; };
 		0D5080DE1920719B00816D19 /* SGHollerbackContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHollerbackContactsViewController.h; sourceTree = "<group>"; };
@@ -545,6 +551,8 @@
 				0D5BCD231921AFAF0058D7F0 /* SGThreadViewController.h */,
 				0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */,
 				0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */,
+				0D1D80AF192558B300A1B469 /* SGThreadViewController+Info.h */,
+				0D1D80B0192558B300A1B469 /* SGThreadViewController+Info.m */,
 				0D5BCD2D1921B8DB0058D7F0 /* SGThreadViewController+Pagination.h */,
 				0D5BCD2E1921B8DB0058D7F0 /* SGThreadViewController+Pagination.m */,
 				0D5BCD281921B4210058D7F0 /* SGThreadTableViewCell.h */,
@@ -558,6 +566,8 @@
 			isa = PBXGroup;
 			children = (
 				0D515708191D3BA000FD9378 /* HMDiallingCode */,
+				0D1D80B21925630B00A1B469 /* UIColor+SGHelper.h */,
+				0D1D80B31925630B00A1B469 /* UIColor+SGHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -920,6 +930,7 @@
 				0D5156F5191D355D00FD9378 /* HBCountryPickerViewController.m in Sources */,
 				0D5156FA191D355D00FD9378 /* HBRegisterViewController.m in Sources */,
 				0D5156D0191D2DFD00FD9378 /* SGPendingVideo.m in Sources */,
+				0D1D80B41925630B00A1B469 /* UIColor+SGHelper.m in Sources */,
 				0D5156DA191D2DFD00FD9378 /* SGRecentFriend+Service.m in Sources */,
 				0D66D6BD191C7B6E00510F35 /* UIColor+JNHelper.m in Sources */,
 				0D5156D6191D2DFD00FD9378 /* SGVideo.m in Sources */,
@@ -933,6 +944,7 @@
 				0D5156C7191D2DFD00FD9378 /* SGConversationObject.m in Sources */,
 				0D03F1B7191D1EF800AE0EF9 /* SGConstants.m in Sources */,
 				0D5080E41920719B00816D19 /* SGHollerbackContactsViewController.m in Sources */,
+				0D1D80B1192558B300A1B469 /* SGThreadViewController+Info.m in Sources */,
 				0D66D681191C7A6100510F35 /* main.m in Sources */,
 				0D5156DE191D2DFD00FD9378 /* SGUser+Service.m in Sources */,
 				0D5156FE191D355D00FD9378 /* SGConversationsViewController.m in Sources */,
