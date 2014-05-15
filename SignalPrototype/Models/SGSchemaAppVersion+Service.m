@@ -40,7 +40,9 @@
      arguments:
      @[[self.class normalizeAppVersion:appVersion],
        @([NSDate date].timeIntervalSince1970),
-       @([NSDate date].timeIntervalSince1970)]];
+       @([NSDate date].timeIntervalSince1970)] completed:^(NSError *error) {
+           ;
+       }];
 }
 
 + (BOOL)isSchemaAppVersionExpired

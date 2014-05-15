@@ -44,6 +44,9 @@
 
 @end
 
+
+#import "SGThreadViewController+Follow.h"
+
 #import "SGThreadViewController+Info.h"
 
 #import "SGThreadViewController+Pagination.h"

@@ -372,7 +372,10 @@
 
 #pragma mark - Updates
 
-+ (void)DBQueue:(FMDatabaseQueue*)dbQueue updateWithStatement:(NSString*)statement arguments:(NSArray*)arguments
++ (void)DBQueue:(FMDatabaseQueue*)dbQueue
+updateWithStatement:(NSString*)statement
+      arguments:(NSArray*)arguments
+      completed:(void(^)(NSError *error))completedBlock
 {
     [dbQueue inDatabase:^(FMDatabase *db) {
         [db beginTransaction];
@@ -386,6 +389,14 @@
             [JNLogger logExceptionWithName:THIS_METHOD reason:nil error:db.lastError];
         }
         [db commit];
+        
+        if (completedBlock) {
+            NSError *error = nil;
+            if (db.hadError) {
+                error = db.lastError;
+            }
+            completedBlock(error);
+        }
     }];
 }
 

@@ -419,10 +419,11 @@
          @"UPDATE messages "
          "SET is_read = 1 "
          "WHERE content_guid = ?"
-         arguments:@[self.contentGUID]];
-    }
-    if (completed) {
-        completed();
+         arguments:@[self.contentGUID] completed:^(NSError *error) {
+             if (completed) {
+                 completed();
+             }
+         }];
     }
 }
 
@@ -459,7 +460,11 @@
 {
     NSString *statement = @"UPDATE messages SET is_read = 0 WHERE content_guid = ?";
     
-    [SGDatabase DBQueue:[SGDatabase getDBQueue] updateWithStatement:statement arguments:@[self.contentGUID]];
+    [SGDatabase DBQueue:[SGDatabase getDBQueue] updateWithStatement:statement arguments:@[self.contentGUID] completed:^(NSError *error) {
+        if (completed) {
+            completed();
+        }
+    }];
     
     if (completed) completed();
 }
@@ -494,7 +499,10 @@
        @(self.sentAt.timeIntervalSince1970),
        self.senderID,
        self.senderName,
-       self.isRead]];
+       self.isRead]
+     completed:^(NSError *error) {
+         ;
+     }];
 }
 
 @end

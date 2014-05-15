@@ -99,6 +99,8 @@ void runOnThreadViewQueue(void (^block)(void))
     self.messageTextField.delegate = self;
     
     [self setupInfoView];
+
+    [self setupFollowingView];
 }
 
 static NSString *CellIdentifier = @"SGThreadTableViewCell";
@@ -146,7 +148,13 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
     [self performMessageTextSendWithTextField:self.messageTextField];
 }
 
-- (IBAction)followAction:(id)sender {
+- (IBAction)followAction:(id)sender
+{
+    [self toggleFollowingWithConversation:self.conversation completed:^{
+        ;
+    } failed:^{
+        ;
+    }];
 }
 
 #pragma mark - UITableViewDataSource

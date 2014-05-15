@@ -72,7 +72,9 @@
      "VALUES (?,?)"
      arguments:
      @[self.guid,
-       self.text]];
+       self.text] completed:^(NSError *error) {
+           ;
+       }];
 }
 
 @end

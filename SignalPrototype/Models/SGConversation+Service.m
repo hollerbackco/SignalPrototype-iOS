@@ -180,6 +180,110 @@
     }
 }
 
+#pragma mark - Follow/Unfollow
+
++ (void)followConversationID:(NSNumber*)conversationID
+                   completed:(void(^)())completed
+                      failed:(void(^)())failed
+{
+    [self
+     remoteFollowing:YES
+     conversationID:conversationID
+     completed:^{
+         [self localUpdateFollowing:YES conversationID:conversationID completed:^{
+             if (completed) {
+                 completed();
+             }
+         } failed:^{
+             if (failed) {
+                 failed();
+             }
+         }];
+     }
+     failed:^{
+         if (failed) {
+             failed();
+         }
+     }];
+}
+
++ (void)remoteFollowing:(BOOL)following
+         conversationID:(NSNumber*)conversationID
+              completed:(void(^)())completed
+                 failed:(void(^)())failed
+{
+    NSDictionary *parameters = [SGAPIClient createAccessTokenParameter];
+    
+    NSString *path;
+    if (following) {
+        path = [NSString stringWithFormat:@"me/conversations/%@/follow", conversationID];
+    } else {
+        path = [NSString stringWithFormat:@"me/conversations/%@/unfollow", conversationID];
+    }
+    
+    [[SGAPIClient sharedClient]
+     POST:path
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         
+         if (completed) {
+             completed();
+         }
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+         [JNLogger logExceptionWithName:THIS_METHOD reason:@"failed request" error:error];
+         if (failed) {
+             failed();
+         }
+     }];
+}
+
++ (void)localUpdateFollowing:(BOOL)following
+              conversationID:(NSNumber*)conversationID
+                   completed:(void(^)())completed
+                      failed:(void(^)())failed
+{
+    [SGDatabase
+     DBQueue:[SGDatabase getDBQueue]
+     updateWithStatement:
+     @"UPDATE conversations SET following = ?"
+     arguments:@[@(following)]
+     completed:^(NSError *error) {
+         if (completed) {
+             completed();
+         }
+     }];
+}
+
++ (void)unfollowConversationID:(NSNumber*)conversationID
+                     completed:(void(^)())completed
+                        failed:(void(^)())failed
+{
+    [self
+     remoteFollowing:NO
+     conversationID:conversationID
+     completed:^{
+         
+         [self localUpdateFollowing:NO conversationID:conversationID completed:^{
+             if (completed) {
+                 completed();
+             }
+         } failed:^{
+             if (failed) {
+                 failed();
+             }
+         }];
+     }
+     failed:^{
+         if (failed) {
+             failed();
+         }
+     }];
+}
+
+#pragma mark -
+
 - (void)save
 {
     // Save info locally
@@ -316,7 +420,10 @@
      "SET is_read = 1 "
      "WHERE conversation_id = ? "
      "AND type = ?"
-     arguments:@[self.identifier, kSGMessageTypeText]];
+     arguments:@[self.identifier, kSGMessageTypeText]
+     completed:^(NSError *error) {
+         ;
+     }];
 }
 
 - (void)remoteMarkAllTextAsReadCompleted:(void(^)())completed failed:(void(^)())failed

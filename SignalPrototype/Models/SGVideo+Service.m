@@ -366,7 +366,10 @@
      @"UPDATE videos "
      "SET file_downloaded = ? "
      "WHERE guid = ?"
-     arguments:@[@(fileDownloaded), self.guid]];
+     arguments:@[@(fileDownloaded), self.guid]
+     completed:^(NSError *error) {
+         ;
+     }];
     
     if (completed) {
         completed();

@@ -43,24 +43,6 @@ void runOnThreadInfoViewQueue(void (^block)(void))
     
     self.recipientsTitleLabel.text = nil;
     self.recipientsTextView.text = nil;
-    
-    [self.followButton setTitle:nil forState:UIControlStateNormal];
-    [self.followButton setTitleColor:JNWhiteColor forState:UIControlStateNormal];
-    
-    BOOL isFollowingConversation = self.conversation.following;
-    if (isFollowingConversation) {
-        
-        [self.infoButton setTitle:@"following" forState:UIControlStateNormal];
-        
-        [self.followButton setTitle:@"unfollow" forState:UIControlStateNormal];
-        [self.followButton setBackgroundColor:JNRedColor];
-    } else {
-        
-        [self.infoButton setTitle:@"not following" forState:UIControlStateNormal];
-        
-        [self.followButton setTitle:@"follow" forState:UIControlStateNormal];
-        [self.followButton setBackgroundColor:JNGreenColor];
-    }
 }
 
 - (void)toggleInfoView
@@ -74,11 +56,7 @@ void runOnThreadInfoViewQueue(void (^block)(void))
 
 - (void)showInfoView
 {
-    runOnThreadInfoViewQueue(^{
-        [self performMemberFetchWithConversationID:self.conversation.identifier completed:^{
-            ;
-        }];
-    });
+    [self performMemberFetchOnQueue];
     
     [UIView animateWithBlock:^{
         self.infoOverlayView.alpha = 1.0;
@@ -93,6 +71,15 @@ void runOnThreadInfoViewQueue(void (^block)(void))
 }
 
 #pragma mark - Fetch
+
+- (void)performMemberFetchOnQueue
+{
+    runOnThreadInfoViewQueue(^{
+        [self performMemberFetchWithConversationID:self.conversation.identifier completed:^{
+            ;
+        }];
+    });
+}
 
 - (void)performMemberFetchWithConversationID:(NSNumber*)conversationID
                                    completed:(void(^)())completed

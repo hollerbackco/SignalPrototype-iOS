@@ -39,6 +39,19 @@
            conversationID:(NSNumber*)conversationID
                 completed:(void(^)())completed
                    failed:(void(^)())failed;
+
+#pragma mark - Follow/Unfollow
+
++ (void)followConversationID:(NSNumber*)conversationID
+                   completed:(void(^)())completed
+                      failed:(void(^)())failed;
+
++ (void)unfollowConversationID:(NSNumber*)conversationID
+                     completed:(void(^)())completed
+                        failed:(void(^)())failed;
+
+#pragma mark -
+
 - (void)save;
 - (void)touch;
 - (void)ttylWithWatchedVideoIds:(NSArray*)watchedIds;

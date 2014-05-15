@@ -27,4 +27,8 @@
 
 - (void)hideInfoView;
 
+#pragma mark - Fetch
+
+- (void)performMemberFetchOnQueue;
+
 @end

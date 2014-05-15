@@ -27,6 +27,9 @@
 
 #pragma mark - Updates
 
-+ (void)DBQueue:(FMDatabaseQueue*)dbQueue updateWithStatement:(NSString*)statement arguments:(NSArray*)arguments;
++ (void)DBQueue:(FMDatabaseQueue*)dbQueue
+updateWithStatement:(NSString*)statement
+      arguments:(NSArray*)arguments
+      completed:(void(^)(NSError *error))completedBlock;
 
 @end
