@@ -90,7 +90,7 @@ void runOnThreadViewQueue(void (^block)(void))
 {
     self.messageTextView.text = self.conversation.name;
     
-    [self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
+    [self.infoButton setTitle:@"not following" forState:UIControlStateNormal];
     
     [self.cameraButton setTitle:nil forState:UIControlStateNormal];
     [self.cameraButton setImage:[JNIcon cameraImageIconWithSize:30.0 color:JNGrayColor] forState:UIControlStateNormal];
@@ -99,6 +99,15 @@ void runOnThreadViewQueue(void (^block)(void))
     
     self.messageTextField.placeholder = @"Message";
     self.messageTextField.delegate = self;
+    
+    // Overlay view
+    self.infoOverlayView.alpha = 0.0;
+    self.infoOverlayView.backgroundColor = [JNBlackColor colorWithAlphaComponent:0.5];
+    [self.followButton setTitle:nil forState:UIControlStateNormal];
+    self.followersTitleLabel.text = nil;
+    self.followersTextView.text = nil;
+    self.recipientsTitleLabel.text = nil;
+    self.recipientsTextView.text = nil;
 }
 
 static NSString *CellIdentifier = @"SGThreadTableViewCell";
@@ -132,8 +141,9 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 
 #pragma mark - Actions
 
-- (IBAction)followAction:(id)sender
+- (IBAction)infoAction:(id)sender
 {
+    [self toggleInfoView];
 }
 
 - (IBAction)cameraAction:(id)sender
@@ -142,16 +152,10 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 
 - (IBAction)sendAction:(id)sender
 {
-    NSString *messageText = self.messageTextField.text;
-    
-    if ([NSString isNotEmptyString:messageText]) {
-        [self performMessageTextSend:messageText completed:^{
-            ;
-        }];
-    }
-    
-    self.messageTextField.text = nil;
-    [self.messageTextField resignFirstResponder];
+    [self performMessageTextSendWithTextField:self.messageTextField];
+}
+
+- (IBAction)followAction:(id)sender {
 }
 
 #pragma mark - UITableViewDataSource
@@ -381,10 +385,26 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [self performMessageTextSendWithTextField:textField];
+    
     return YES;
 }
 
 #pragma mark - Message Text Send
+
+- (void)performMessageTextSendWithTextField:(UITextField*)textField
+{
+    NSString *messageText = self.messageTextField.text;
+    
+    if ([NSString isNotEmptyString:messageText]) {
+        [self performMessageTextSend:messageText completed:^{
+            ;
+        }];
+    }
+    
+    self.messageTextField.text = nil;
+    [self.messageTextField resignFirstResponder];
+}
 
 - (void)performMessageTextSend:(NSString*)text completed:(void(^)())completed
 {
@@ -444,6 +464,31 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
             [self reloadTableViewAndScrollToBottomAnimated:YES];
         });
     });
+}
+
+#pragma mark - Info 
+
+- (void)toggleInfoView
+{
+    if (self.infoOverlayView.alpha == 0.0) {
+        [self showInfoView];
+    } else {
+        [self hideInfoView];
+    }
+}
+
+- (void)showInfoView
+{
+    [UIView animateWithBlock:^{
+        self.infoOverlayView.alpha = 1.0;
+    }];
+}
+
+- (void)hideInfoView
+{
+    [UIView animateWithBlock:^{
+        self.infoOverlayView.alpha = 0.0;
+    }];
 }
 
 @end
