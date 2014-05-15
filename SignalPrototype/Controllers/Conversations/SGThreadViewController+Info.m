@@ -129,10 +129,9 @@ void runOnThreadInfoViewQueue(void (^block)(void))
     __block NSMutableString *followersText = [NSMutableString string];
     [self.followers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         SGMembership *member = (SGMembership*) obj;
-        JNLogObject(member);
         NSString *username = member.username;
         [followersText appendString:username];
-        if (self.followers.count > 1 && idx < self.followers.count - 2) {
+        if (self.followers.count > 1 && idx <= self.followers.count - 2) {
             [followersText appendString:@", "];
         }
     }];
@@ -145,10 +144,9 @@ void runOnThreadInfoViewQueue(void (^block)(void))
     __block NSMutableString *recipientsText = [NSMutableString string];
     [self.recipients enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         SGMembership *member = (SGMembership*) obj;
-        JNLogObject(member);
         NSString *username = member.username;
         [recipientsText appendString:username];
-        if (self.recipients.count > 1 && idx < self.recipients.count - 2) {
+        if (self.recipients.count > 1 && idx <= self.recipients.count - 2) {
             [recipientsText appendString:@", "];
         }
     }];
