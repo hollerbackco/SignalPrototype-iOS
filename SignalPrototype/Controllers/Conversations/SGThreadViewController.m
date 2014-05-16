@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Signal. All rights reserved.
 //
 
+#import <EXTScope.h>
 #import <MHPrettyDate.h>
 
 #import "JNIcon.h"
@@ -31,6 +32,9 @@ void runOnThreadViewQueue(void (^block)(void))
 }
 
 @interface SGThreadViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+// Sync
+@property (nonatomic, strong) RACDisposable *syncNotificationDisposable;
 
 @end
 
@@ -112,6 +116,27 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
     [self.tableView scrollsToTop];
     [self.tableView registerNib:[UINib nibWithNibName:@"SGThreadTableViewCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:CellIdentifier];
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    JNLog();
+    [super viewWillAppear:animated];
+    
+//    [JNStatusBarNotification dismiss];
+    
+//    self.tableView.delegate = self;
+    
+    [self observeSyncNotification];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    JNLog();
+    [super viewWillDisappear:animated];
+    
+//    self.tableView.delegate = nil;
+    
+    [self removeSyncNotificationObserver];
 }
 
 #pragma mark Empty Thread
@@ -219,6 +244,67 @@ static NSString *CellIdentifier = @"SGThreadTableViewCell";
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+#pragma mark - Sync
+
+- (void)observeSyncNotification
+{
+    JNLog();
+    if (self.syncNotificationDisposable) {
+        [self.syncNotificationDisposable dispose];
+    }
+    @weakify(self);
+    self.syncNotificationDisposable =
+    [[[NSNotificationCenter defaultCenter]
+      rac_addObserverForName:kSGSyncPostNotificationName object:nil]
+     subscribeNext:^(id x) {
+         JNLogObject(kSGSyncPostNotificationName);
+         [self_weak_ processSyncNotification:(NSNotification*) x];
+     }];
+}
+
+- (void)removeSyncNotificationObserver
+{
+    JNLog();
+    if (self.syncNotificationDisposable) {
+        [self.syncNotificationDisposable dispose];
+    }
+}
+
+- (void)processSyncNotification:(NSNotification*)notification
+{
+    if ([UIApplication sharedApplication].applicationState != UIApplicationStateActive) {
+        return;
+    }
+    __block BOOL syncContainsConversation = NO;
+    NSDictionary *userInfo = notification.userInfo;
+    if (userInfo) {
+        // conversations from sync
+        NSArray *conversations = [userInfo objectForKey:kSGSyncUserInfoConvosKey];
+        [conversations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([((SGConversation*) obj).identifier isEqualToNumber:self.conversation.identifier]) {
+                syncContainsConversation = YES;
+                *stop = YES;
+            }
+        }];
+        
+        if (!syncContainsConversation) {
+            // messages from sync
+            NSArray *messages = [userInfo objectForKey:kSGSyncUserInfoMessagesKey];
+            [messages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                if ([((SGMessage*) obj).conversationID isEqualToNumber:self.conversation.identifier]) {
+                    syncContainsConversation = YES;
+                    *stop = YES;
+                }
+            }];
+        }
+    }
+    JNLogPrimitive(syncContainsConversation);
+    if (syncContainsConversation) {
+        [self performFetchWithIncrementalUpdates:NO animatedScroll:NO];
+        
+//        [self markAllMessageTextAsRead];
+    }
 }
 
 #pragma mark - Fetch
