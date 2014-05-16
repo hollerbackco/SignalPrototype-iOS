@@ -10,6 +10,7 @@
 
 #import "UIColor+JNHelper.h"
 #import "UIViewController+JNHelper.h"
+#import "UIView+JNHelper.h"
 
 #import "SGAPIClient.h"
 #import "SGSession.h"
@@ -133,6 +134,7 @@
     self.countryCodeTextField.keyboardType = UIKeyboardTypePhonePad;
     self.countryCodeTextField.textAlignment = NSTextAlignmentCenter;
     self.countryCodeTextField.text = @"+1";
+    [self.countryCodeTextField applyPadding:4.0];
     
     // phone number text field
     self.phoneTextField.tag = 1004;

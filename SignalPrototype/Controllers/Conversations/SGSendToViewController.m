@@ -95,10 +95,8 @@
 {
     [super setupNavigationBar];
     
-    if (self.canCancel) {
-        [self applyCancelNavigationButtonWithTarget:self action:@selector(goBackAction:)];
-    }
-//    [self showNewGroupNavigationItem];
+    [self applyBackNavigationButtonWithTarget:self action:@selector(goBackAction:)];
+    
     [self hideNewGroupNavigationItem];
 }
 
@@ -299,6 +297,8 @@
 - (void)goBackAction:(id)sender
 {
     JNLog();
+    
+    [self.navigationController popViewControllerAnimated:YES];
     if (self.didCancel) {
         self.didCancel(self);
     }

@@ -282,12 +282,17 @@ CGFloat const kHBViewAnimationFastDuration = 0.3;
 
 - (void)awakeFromNib
 {
-    [self applyPadding];
+    [self applyDefaultPadding];
 }
 
-- (void)applyPadding
+- (void)applyDefaultPadding
 {
-    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [self applyPadding:20.0];
+}
+
+- (void)applyPadding:(CGFloat)width
+{
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
     self.leftView = paddingView;
     self.leftViewMode = UITextFieldViewModeAlways;
     

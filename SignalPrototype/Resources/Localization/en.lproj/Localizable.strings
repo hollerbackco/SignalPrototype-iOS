@@ -41,8 +41,8 @@
 /* Welcome */
 
 // Welcome Start
-"welcome.start.title" = "Hollerback";
-"welcome.start.body" = "Send short, fun video messages";
+"welcome.start.title" = "Signal";
+"welcome.start.body" = " ";
 "welcome.start.first.button.text" = "Sign Up";
 "welcome.start.second.button.text" = "Log In";
 

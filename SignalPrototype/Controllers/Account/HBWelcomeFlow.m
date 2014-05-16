@@ -172,9 +172,9 @@
     @weakify(self);
     welcomeAllowPushViewController.finishedViewController = ^() {
         runOnMainQueue(^{
-            if (![self.class doesHowItWorksConversationExist]) {
-                [self.class createHowItWorksConversation];
-            }
+//            if (![self.class doesHowItWorksConversationExist]) {
+//                [self.class createHowItWorksConversation];
+//            }
             [self_weak_ finishedWelcomeFlow];
         });
     };

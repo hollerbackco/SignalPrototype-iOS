@@ -108,6 +108,10 @@ typedef void(^HBViewComplete)(BOOL finished);
 
 @interface UITextField (JNHelper)
 
+- (void)applyDefaultPadding;
+
+- (void)applyPadding:(CGFloat)width;
+
 - (void)addToolBarItem:(NSString*)title target:(id)target action:(SEL)action;
 
 - (void)addToolbarWithDoneTarget:(id)doneTarget doneAction:(SEL)doneAction

@@ -292,7 +292,7 @@ static UIImageView *_navigationBarLogoImageView;
 
 - (void)applyBackNavigationButtonWithTarget:(id)target action:(SEL)action
 {
-    [self applyBackNavigationButtonWithColor:JNWhiteColor target:target action:action];
+    [self applyBackNavigationButtonWithColor:JNBlackColor target:target action:action];
 }
 
 - (void)applyBackNavigationButtonWithColor:(UIColor*)color target:(id)target action:(SEL)action

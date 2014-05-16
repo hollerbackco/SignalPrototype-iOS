@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -36,10 +36,10 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-GB-eIb" userLabel="contentTitleLabel">
-                                    <rect key="frame" x="20" y="106" width="280" height="50"/>
+                                    <rect key="frame" x="20" y="97" width="280" height="59"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="Z9y-Zx-CWH"/>
+                                        <constraint firstAttribute="height" constant="59" id="Z9y-Zx-CWH"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                 <constraint firstAttribute="bottom" secondItem="zWp-s9-6JC" secondAttribute="bottom" id="RW3-CG-dnp"/>
                                 <constraint firstItem="3YY-GB-eIb" firstAttribute="trailing" secondItem="zWp-s9-6JC" secondAttribute="trailing" id="Vhz-Ax-PQJ"/>
                                 <constraint firstItem="hdV-xs-TIN" firstAttribute="centerX" secondItem="3YY-GB-eIb" secondAttribute="centerX" id="YPH-DV-33K"/>
-                                <constraint firstItem="3YY-GB-eIb" firstAttribute="top" secondItem="hdV-xs-TIN" secondAttribute="bottom" constant="40" id="dUI-BE-iY3"/>
+                                <constraint firstItem="3YY-GB-eIb" firstAttribute="top" secondItem="hdV-xs-TIN" secondAttribute="bottom" constant="31" id="dUI-BE-iY3"/>
                                 <constraint firstAttribute="height" constant="194" id="jbf-xL-CM4"/>
                                 <constraint firstItem="3YY-GB-eIb" firstAttribute="leading" secondItem="qZE-aP-MUT" secondAttribute="leading" constant="20" symbolic="YES" id="pYE-UJ-uST"/>
                                 <constraint firstAttribute="trailing" secondItem="3YY-GB-eIb" secondAttribute="trailing" constant="20" symbolic="YES" id="ztd-K3-UpC"/>
