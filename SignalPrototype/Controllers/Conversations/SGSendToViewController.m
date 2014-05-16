@@ -81,7 +81,7 @@
     
     [self setupChildViewControllers];
     
-    [self showAddressBookContacts];
+    [self showHollerbackContacts];
     
     [self hideFooterViewAnimated:NO];
     
@@ -422,7 +422,6 @@
     [self.hollerbackContactsViewController reloadTableView];
 //    [self.addressBookContactsViewController reloadTableView];
     
-    [self showHollerbackContacts];
     [self.hollerbackContactsViewController didFinishBuildingContacts];
 //    [self.addressBookContactsViewController didFinishBuildingContacts];
 }

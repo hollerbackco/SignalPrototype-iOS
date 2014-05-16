@@ -86,6 +86,7 @@
 		0D515725191D60F000FD9378 /* HBWelcomeStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D515723191D60F000FD9378 /* HBWelcomeStartViewController.xib */; };
 		0D515728191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */; };
 		0D51572C191D634F00FD9378 /* HBPushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */; };
+		0D51F54F19269B8200143660 /* checkmark-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D51F54E19269B8200143660 /* checkmark-icon@2x.png */; };
 		0D5BCD261921AFAF0058D7F0 /* SGThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */; };
 		0D5BCD271921AFAF0058D7F0 /* SGThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */; };
 		0D5BCD2B1921B4210058D7F0 /* SGThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5BCD291921B4210058D7F0 /* SGThreadTableViewCell.m */; };
@@ -272,6 +273,7 @@
 		0D515727191D61EF00FD9378 /* HBWelcomeAllowPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWelcomeAllowPushViewController.m; sourceTree = "<group>"; };
 		0D51572A191D634F00FD9378 /* HBPushNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPushNotificationHandler.h; sourceTree = "<group>"; };
 		0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPushNotificationHandler.m; sourceTree = "<group>"; };
+		0D51F54E19269B8200143660 /* checkmark-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark-icon@2x.png"; sourceTree = "<group>"; };
 		0D5BCD231921AFAF0058D7F0 /* SGThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGThreadViewController.h; sourceTree = "<group>"; };
 		0D5BCD241921AFAF0058D7F0 /* SGThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGThreadViewController.m; sourceTree = "<group>"; };
 		0D5BCD251921AFAF0058D7F0 /* SGThreadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGThreadViewController.xib; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 		0D515711191D590600FD9378 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0D51F54D19269B8200143660 /* Images */,
 				0D515712191D590600FD9378 /* Localization */,
 			);
 			path = Resources;
@@ -610,6 +613,14 @@
 				0D51572B191D634F00FD9378 /* HBPushNotificationHandler.m */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0D51F54D19269B8200143660 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0D51F54E19269B8200143660 /* checkmark-icon@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		0D66D668191C7A6100510F35 = {
@@ -836,6 +847,7 @@
 				0D5156F9191D355D00FD9378 /* HBLoginViewController.xib in Resources */,
 				0D5BCD271921AFAF0058D7F0 /* SGThreadViewController.xib in Resources */,
 				0D515701191D355D00FD9378 /* SGCreateThreadViewController.xib in Resources */,
+				0D51F54F19269B8200143660 /* checkmark-icon@2x.png in Resources */,
 				0D515715191D591500FD9378 /* Localizable.strings in Resources */,
 				0DC855AC191D9A2200396425 /* HBBaseWelcomeViewController.xib in Resources */,
 				0D515706191D359400FD9378 /* SGInitialViewController.xib in Resources */,
